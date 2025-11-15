@@ -80,6 +80,13 @@ router.get('/cybersecurity', (req, res) => {
 }
 
 );
+//cyber-security
+
+router.get('/video-editing', (req, res) => {   
+    res.sendFile(path.join(viewsPath, 'video-editing.html')); 
+}
+
+);
 //ai-ml
 router.get('/AI', (req, res) => {
     res.sendFile(path.join(viewsPath, 'AI.html')); 
