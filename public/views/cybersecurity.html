@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naija Cyber Shield Course - MDTH Courses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #008751; /* Nigerian green */
+            --primary-hover: #006b41;
+            --secondary-color: #EAA903; /* Nigerian yellow/gold */
+            --text-primary: #1F2937;
+            --text-secondary: #6B7280;
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F9FAFB;
+            --border-color: #E5E7EB;
+            --accent-color: #E31B23; /* Nigerian red */
+        }
+
+        [data-theme="dark"] {
+            --text-primary: #F9FAFB;
+            --text-secondary: #9CA3AF;
+            --bg-primary: #111827;
+            --bg-secondary: #1F2937;
+            --border-color: #374151;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .theme-transition {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .tab-active {
+            border-bottom-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .tab-inactive {
+            border-bottom-color: transparent;
+            color: var(--text-secondary);
+        }
+
+        .tab-inactive:hover {
+            color: var(--primary-color);
+        }
+
+        .accordion-section {
+            cursor: pointer;
+        }
+
+        .accordion-section:hover {
+            background-color: var(--bg-secondary);
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .naija-flag-bg {
+            background: linear-gradient(90deg, #008751 33%, #FFFFFF 33%, #FFFFFF 66%, #E31B23 66%);
+        }
+
+        .naija-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, var(--secondary-color) 2%, transparent 2.5%),
+                radial-gradient(circle at 75% 75%, var(--secondary-color) 2%, transparent 2.5%);
+            background-size: 30px 30px;
+        }
+
+        .african-border {
+            border: 2px solid var(--primary-color);
+            position: relative;
+        }
+
+        .african-border::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 1px solid var(--secondary-color);
+            z-index: -1;
+        }
+
+        .cyber-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .cyber-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen theme-transition">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm border-b theme-transition" style="background-color: var(--bg-primary); border-color: var(--border-color);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="/" class="flex items-center">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center naija-flag-bg">
+                        <span class="text-white font-bold text-lg">NCS</span>
+                    </div>
+                    <span class="ml-2 font-bold text-lg" style="color: var(--primary-color);">Naija Cyber Shield</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="desktop-nav hidden md:flex items-center space-x-8">
+                    <a href="/" class="font-medium theme-transition" style="color: var(--text-primary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-primary)'">Home</a>
+                    <a href="/courses" class="font-medium theme-transition" style="color: var(--text-primary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-primary)'">Courses</a>
+                    <a href="/about" class="font-medium theme-transition" style="color: var(--text-primary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-primary)'">About Us</a>
+                    <a href="/contact" class="font-medium theme-transition" style="color: var(--text-primary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-primary)'">Contact</a>
+                    <a href="/blog" class="font-medium theme-transition" style="color: var(--text-primary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-primary)'">Blog</a>
+                </div>
+
+                <!-- Auth Buttons & Theme Toggle -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="/login" class="px-4 py-2 border rounded-lg font-medium theme-transition" style="border-color: var(--border-color); color: var(--text-primary);">Login</a>
+                    <a href="/signup" class="px-4 py-2 rounded-lg font-medium text-white theme-transition" style="background-color: var(--primary-color);">Sign Up</a>
+                    
+                    <button id="theme-toggle" class="p-2 rounded-lg theme-transition" style="background-color: var(--bg-secondary);">
+                        <svg id="sun-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                        <svg id="moon-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg theme-transition" style="background-color: var(--bg-secondary);">
+                    <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu md:hidden py-4 border-t theme-transition" style="border-color: var(--border-color);">
+                <div class="flex flex-col space-y-4">
+                    <a href="/" class="font-medium theme-transition" style="color: var(--text-primary);">Home</a>
+                    <a href="/courses" class="font-medium theme-transition" style="color: var(--text-primary);">Courses</a>
+                    <a href="/about" class="font-medium theme-transition" style="color: var(--text-primary);">About Us</a>
+                    <a href="/contact" class="font-medium theme-transition" style="color: var(--text-primary);">Contact</a>
+                    <a href="/blog" class="font-medium theme-transition" style="color: var(--text-primary);">Blog</a>
+                    <div class="flex flex-col space-y-2 pt-4 border-t theme-transition" style="border-color: var(--border-color);">
+                        <a href="/login" class="px-4 py-2 border rounded-lg font-medium text-center theme-transition" style="border-color: var(--border-color); color: var(--text-primary);">Login</a>
+                        <a href="/signup" class="px-4 py-2 rounded-lg font-medium text-white text-center theme-transition" style="background-color: var(--primary-color);">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Course Hero Section -->
+    <section class="py-12 theme-transition naija-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Video Player -->
+                <div class="lg:col-span-2">
+                    <div class="relative bg-black rounded-lg overflow-hidden shadow-lg african-border">
+                        <div class="aspect-video">
+                            <video class="w-full h-full object-cover" poster="cybersecurity-course-preview.png" controls>
+                                <source src="https://cdn.pixabay.com/video/2024/09/24/233043_large.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-md font-bold">
+                            <i class="fas fa-shield-alt mr-2"></i>Naija Cyber Shield
+                        </div>
+                    </div>
+                    
+                    <!-- Course Highlights -->
+                    <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="cyber-card p-4 text-center">
+                            <i class="fas fa-user-shield text-2xl mb-2" style="color: var(--primary-color);"></i>
+                            <h3 class="font-bold">Cyber Defense</h3>
+                            <p class="text-sm" style="color: var(--text-secondary);">Protect against threats</p>
+                        </div>
+                        <div class="cyber-card p-4 text-center">
+                            <i class="fas fa-network-wired text-2xl mb-2" style="color: var(--primary-color);"></i>
+                            <h3 class="font-bold">Network Security</h3>
+                            <p class="text-sm" style="color: var(--text-secondary);">Secure your infrastructure</p>
+                        </div>
+                        <div class="cyber-card p-4 text-center">
+                            <i class="fas fa-lock text-2xl mb-2" style="color: var(--primary-color);"></i>
+                            <h3 class="font-bold">Data Protection</h3>
+                            <p class="text-sm" style="color: var(--text-secondary);">Keep information safe</p>
+                        </div>
+                        <div class="cyber-card p-4 text-center">
+                            <i class="fas fa-bug text-2xl mb-2" style="color: var(--primary-color);"></i>
+                            <h3 class="font-bold">Ethical Hacking</h3>
+                            <p class="text-sm" style="color: var(--text-secondary);">Find vulnerabilities first</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Info Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24 rounded-lg border shadow-sm theme-transition cyber-card">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="text-3xl font-bold" style="color: var(--primary-color);">₦65,000</div>
+                                <div class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm font-medium">
+                                    <i class="fas fa-bolt mr-1"></i>Popular
+                                </div>
+                            </div>
+
+                            <button class="w-full mb-6 px-4 py-3 rounded-lg font-medium text-white theme-transition flex items-center justify-center" style="background-color: var(--primary-color);" onmouseover="this.style.backgroundColor='var(--primary-hover)'" onmouseout="this.style.backgroundColor='var(--primary-color)'">
+                                <i class="fas fa-lock mr-2"></i> Enroll Now - Secure Your Spot
+                            </button>
+
+                            <div class="space-y-4 mb-6">
+                                <div class="flex items-center" style="color: var(--text-secondary);">
+                                    <i class="fas fa-clock mr-3" style="color: var(--primary-color);"></i>
+                                    <span>4 Months Duration</span>
+                                </div>
+                                <div class="flex items-center" style="color: var(--text-secondary);">
+                                    <i class="fas fa-video mr-3" style="color: var(--primary-color);"></i>
+                                    <span>48 Video Lessons</span>
+                                </div>
+                                <div class="flex items-center" style="color: var(--text-secondary);">
+                                    <i class="fas fa-certificate mr-3" style="color: var(--primary-color);"></i>
+                                    <span>Naija Cyber Shield Certificate</span>
+                                </div>
+                                <div class="flex items-center" style="color: var(--text-secondary);">
+                                    <i class="fas fa-infinity mr-3" style="color: var(--primary-color);"></i>
+                                    <span>Lifetime Access</span>
+                                </div>
+                                <div class="flex items-center" style="color: var(--text-secondary);">
+                                    <i class="fas fa-mobile-alt mr-3" style="color: var(--primary-color);"></i>
+                                    <span>Access on Mobile and TV</span>
+                                </div>
+                                <div class="flex items-center" style="color: var(--text-secondary);">
+                                    <i class="fas fa-hands-helping mr-3" style="color: var(--primary-color);"></i>
+                                    <span>1-on-1 Mentorship</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center pt-6 border-t theme-transition" style="border-color: var(--border-color);">
+                                <div class="w-12 h-12 rounded-full overflow-hidden mr-4 border-2" style="border-color: var(--primary-color);">
+                                    <img src="nigerian-instructor-avatar.png" alt="Chinedu Okafor" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold" style="color: var(--text-primary);">Chinedu Okafor</h4>
+                                    <p class="text-sm" style="color: var(--text-secondary);">Cyber Security Expert</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Tabs Section -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Tab Headers -->
+            <div class="flex border-b mb-8 theme-transition" style="border-color: var(--border-color);">
+                <button class="tab-btn px-6 py-3 font-semibold border-b-2 transition-colors tab-active" data-tab="overview">Overview</button>
+                <button class="tab-btn px-6 py-3 font-semibold border-b-2 transition-colors tab-inactive" data-tab="curriculum">Curriculum</button>
+                <button class="tab-btn px-6 py-3 font-semibold border-b-2 transition-colors tab-inactive" data-tab="reviews">Reviews</button>
+                <button class="tab-btn px-6 py-3 font-semibold border-b-2 transition-colors tab-inactive" data-tab="instructor">Instructor</button>
+            </div>
+
+            <!-- Tab Content -->
+            <div id="tab-content">
+                <!-- Overview Tab -->
+                <div id="overview-tab" class="tab-content">
+                    <div class="space-y-8">
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4" style="color: var(--text-primary);">Naija Cyber Shield: Complete Cybersecurity Course</h2>
+                            <p class="mb-4" style="color: var(--text-secondary);">
+                                Protect yourself, your business, and Nigeria's digital future with our comprehensive cybersecurity course. Learn how to defend against cyber threats, secure networks, and understand the cybersecurity landscape with a focus on African contexts and challenges.
+                            </p>
+                            <p style="color: var(--text-secondary);">
+                                This course is designed for Nigerians and Africans who want to build cybersecurity skills to protect against local and global threats. From understanding common "Yahoo Yahoo" scams to enterprise-level security, we cover it all.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--text-primary);">Wetin You Go Learn? (What Will You Learn?)</h3>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span style="color: var(--text-primary);">Understand cybersecurity fundamentals and Naija-specific threats</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span style="color: var(--text-primary);">Protect against common Nigerian cyber scams and fraud</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span style="color: var(--text-primary);">Secure networks, systems, and mobile devices</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span style="color: var(--text-primary);">Learn ethical hacking to find vulnerabilities before criminals do</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span style="color: var(--text-primary);">Implement data protection strategies for businesses</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span style="color: var(--text-primary);">Understand cybersecurity laws and regulations in Nigeria</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span style="color: var(--text-primary);">Develop incident response plans for organizations</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span style="color: var(--text-primary);">Build a cybersecurity career with international certifications</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-xl font-bold mb-4" style="color: var(--text-primary);">Wetin You Need (Requirements)</h3>
+                                <ul class="space-y-2">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-brain mr-2" style="color: var(--primary-color);"></i>
+                                        <span style="color: var(--text-primary);">Willingness to Learn & Open Mind</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-laptop mr-2" style="color: var(--primary-color);"></i>
+                                        <span style="color: var(--text-primary);">Computer/Laptop (Windows or Mac)</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-wifi mr-2" style="color: var(--primary-color);"></i>
+                                        <span style="color: var(--text-primary);">Internet Connection</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-shield-alt mr-2" style="color: var(--primary-color);"></i>
+                                        <span style="color: var(--text-primary);">No prior cybersecurity experience required</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3 class="text-xl font-bold mb-4" style="color: var(--text-primary);">Who This Course For?</h3>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <div class="w-4 h-4 rounded-full mr-2 mt-2 flex-shrink-0" style="background-color: var(--primary-color);"></div>
+                                        <span style="color: var(--text-primary);">IT Professionals looking to specialize in cybersecurity</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-4 h-4 rounded-full mr-2 mt-2 flex-shrink-0" style="background-color: var(--primary-color);"></div>
+                                        <span style="color: var(--text-primary);">Business Owners wanting to protect their companies</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-4 h-4 rounded-full mr-2 mt-2 flex-shrink-0" style="background-color: var(--primary-color);"></div>
+                                        <span style="color: var(--text-primary);">Students interested in high-demand cybersecurity careers</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-4 h-4 rounded-full mr-2 mt-2 flex-shrink-0" style="background-color: var(--primary-color);"></div>
+                                        <span style="color: var(--text-primary);">Anyone concerned about online safety in Nigeria</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Curriculum Tab -->
+                <div id="curriculum-tab" class="tab-content hidden">
+                    <div>
+                        <h2 class="text-2xl font-bold mb-4" style="color: var(--text-primary);">Course Content</h2>
+                        <p class="mb-6" style="color: var(--text-secondary);">10/48 Lessons (21% Complete)</p>
+
+                        <div class="space-y-4">
+                            <div class="rounded-lg border theme-transition cyber-card">
+                                <div class="accordion-section p-4 theme-transition" onclick="toggleAccordion('intro')">
+                                    <div class="flex justify-between items-center">
+                                        <div class="flex items-center">
+                                            <i id="intro-chevron" class="fas fa-chevron-right mr-3 transition-transform"></i>
+                                            <h3 class="font-semibold" style="color: var(--text-primary);">Introduction to Cybersecurity for Naija</h3>
+                                        </div>
+                                        <div class="flex gap-4 text-sm" style="color: var(--text-secondary);">
+                                            <span>6 Lessons</span>
+                                            <span>52 min</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="intro-content" class="px-4 pb-4">
+                                    <div class="space-y-3">
+                                        <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
+                                                <span style="color: var(--text-primary);">Wetin Be Cybersecurity?</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">12:25</span>
+                                        </div>
+                                        <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
+                                                <span style="color: var(--text-primary);">Cyber Threats We Dey Face for Naija</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">10:15</span>
+                                        </div>
+                                        <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
+                                                <span style="color: var(--text-primary);">Understanding Yahoo Yahoo & Online Scams</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">14:40</span>
+                                        </div>
+                                        <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
+                                                <span style="color: var(--text-primary);">Cybersecurity Career for Nigeria</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">08:30</span>
+                                        </div>
+                                        <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
+                                                <span style="color: var(--text-primary);">Setting Up Your Security Lab</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">05:20</span>
+                                        </div>
+                                        <div class="flex justify-between items-center py-2">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-file-pdf mr-3" style="color: var(--primary-color);"></i>
+                                                <span style="color: var(--text-primary);">Course Resources & Tools</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">PDF</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="rounded-lg border theme-transition cyber-card">
+                                <div class="accordion-section p-4 theme-transition" onclick="toggleAccordion('network')">
+                                    <div class="flex justify-between items-center">
+                                        <div class="flex items-center">
+                                            <i id="network-chevron" class="fas fa-chevron-right mr-3 transition-transform"></i>
+                                            <h3 class="font-semibold" style="color: var(--text-primary);">Network Security & Defense</h3>
+                                        </div>
+                                        <div class="flex gap-4 text-sm" style="color: var(--text-secondary);">
+                                            <span>8 Lessons</span>
+                                            <span>96 min</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="network-content" class="px-4 pb-4 hidden">
+                                    <div class="space-y-3">
+                                        <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
+                                                <span style="color: var(--text-primary);">Network Fundamentals for Security</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">15:20</span>
+                                        </div>
+                                        <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
+                                                <span style="color: var(--text-primary);">Firewalls & Network Protection</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">18:30</span>
+                                        </div>
+                                        <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
+                                                <span style="color: var(--text-primary);">Securing Wi-Fi Networks</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">14:15</span>
+                                        </div>
+                                        <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
+                                                <span style="color: var(--text-primary);">Intrusion Detection Systems</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">12:40</span>
+                                        </div>
+                                        <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
+                                                <span style="color: var(--text-primary);">VPNs & Secure Remote Access</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">08:35</span>
+                                        </div>
+                                        <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
+                                                <span style="color: var(--text-primary);">Network Monitoring Tools</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">10:20</span>
+                                        </div>
+                                        <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
+                                                <span style="color: var(--text-primary);">Practical: Securing a Small Business Network</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">15:10</span>
+                                        </div>
+                                        <div class="flex justify-between items-center py-2">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-file-pdf mr-3" style="color: var(--primary-color);"></i>
+                                                <span style="color: var(--text-primary);">Network Security Checklist</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">PDF</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="rounded-lg border theme-transition cyber-card">
+                                <div class="accordion-section p-4 theme-transition" onclick="toggleAccordion('ethical')">
+                                    <div class="flex justify-between items-center">
+                                        <div class="flex items-center">
+                                            <i id="ethical-chevron" class="fas fa-chevron-right mr-3 transition-transform"></i>
+                                            <h3 class="font-semibold" style="color: var(--text-primary);">Ethical Hacking & Penetration Testing</h3>
+                                        </div>
+                                        <div class="flex gap-4 text-sm" style="color: var(--text-secondary);">
+                                            <span>7 Lessons</span>
+                                            <span>88 min</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="ethical-content" class="px-4 pb-4 hidden">
+                                    <div class="space-y-3">
+                                        <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
+                                                <span style="color: var(--text-primary);">Introduction to Ethical Hacking</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">10:15</span>
+                                        </div>
+                                        <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
+                                                <span style="color: var(--text-primary);">Reconnaissance & Information Gathering</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">18:30</span>
+                                        </div>
+                                        <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
+                                                <span style="color: var(--text-primary);">Vulnerability Scanning & Analysis</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">12:40</span>
+                                        </div>
+                                        <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
+                                                <span style="color: var(--text-primary);">Exploitation Techniques</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">14:25</span>
+                                        </div>
+                                        <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
+                                                <span style="color: var(--text-primary);">Web Application Security Testing</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">16:15</span>
+                                        </div>
+                                        <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
+                                                <span style="color: var(--text-primary);">Social Engineering & Human Factors</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">10:30</span>
+                                        </div>
+                                        <div class="flex justify-between items-center py-2">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-file-pdf mr-3" style="color: var(--primary-color);"></i>
+                                                <span style="color: var(--text-primary);">Ethical Hacking Legal Framework in Nigeria</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">PDF</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reviews Tab -->
+                <div id="reviews-tab" class="tab-content hidden">
+                    <div>
+                        <div class="flex justify-between items-center mb-8">
+                            <h2 class="text-2xl font-bold" style="color: var(--text-primary);">Student Reviews</h2>
+                            <div class="flex items-center gap-4">
+                                <div class="text-4xl font-bold" style="color: var(--primary-color);">4.8</div>
+                                <div>
+                                    <div class="flex text-yellow-400 mb-1">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <div class="text-sm" style="color: var(--text-secondary);">Based on 324 reviews</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="rounded-lg border theme-transition cyber-card">
+                                <div class="p-6">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-10 h-10 rounded-full overflow-hidden mr-4 border-2" style="border-color: var(--primary-color);">
+                                            <img src="nigerian-student-avatar-1.png" alt="Adebayo Adekunle" class="w-full h-full object-cover">
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold" style="color: var(--text-primary);">Adebayo Adekunle</h4>
+                                            <p class="text-sm" style="color: var(--text-secondary);">Lagos, Nigeria • 2 weeks ago</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex text-yellow-400 mb-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p style="color: var(--text-primary);">"This course don change my life! As a Naija guy wey dey run small business, I never know say cybersecurity fit be like this. Now I don protect my business from Yahoo Yahoo boys. Chinedu na real Oga for this cybersecurity matter!"</p>
+                                </div>
+                            </div>
+
+                            <div class="rounded-lg border theme-transition cyber-card">
+                                <div class="p-6">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-10 h-10 rounded-full overflow-hidden mr-4 border-2" style="border-color: var(--primary-color);">
+                                            <img src="nigerian-student-avatar-2.png" alt="Chioma Eze" class="w-full h-full object-cover">
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold" style="color: var(--text-primary);">Chioma Eze</h4>
+                                            <p class="text-sm" style="color: var(--text-secondary);">Abuja, Nigeria • 1 month ago</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex text-yellow-400 mb-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p style="color: var(--text-primary);">"I was looking for a cybersecurity course wey go fit our Naija context. This one na correct package! The way dem break down how to protect against our local threats, e dey make sense well well. I don even use the knowledge secure my papa business. Naija Cyber Shield no be joke!"</p>
+                                </div>
+                            </div>
+
+                            <div class="rounded-lg border theme-transition cyber-card">
+                                <div class="p-6">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-10 h-10 rounded-full overflow-hidden mr-4 border-2" style="border-color: var(--primary-color);">
+                                            <img src="nigerian-student-avatar-3.png" alt="Emeka Okoro" class="w-full h-full object-cover">
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold" style="color: var(--text-primary);">Emeka Okoro</h4>
+                                            <p class="text-sm" style="color: var(--text-secondary);">Port Harcourt, Nigeria • 3 weeks ago</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex text-yellow-400 mb-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <p style="color: var(--text-primary);">"As an IT guy for one bank for here, I think say I don know cybersecurity. But this course open my eyes to plenty things wey I never know. The ethical hacking section na bomb! Now I fit protect our systems better. I recommend this course for any Nigerian wey serious about cybersecurity."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instructor Tab -->
+                <div id="instructor-tab" class="tab-content hidden">
+                    <div>
+                        <h2 class="text-2xl font-bold mb-6" style="color: var(--text-primary);">About the Instructor</h2>
+                        <div class="grid md:grid-cols-4 gap-8">
+                            <div class="md:col-span-1">
+                                <div class="w-48 h-48 rounded-lg overflow-hidden mx-auto md:mx-0 border-4" style="border-color: var(--primary-color);">
+                                    <img src="nigerian-instructor-professional-photo.png" alt="Chinedu Okafor" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <div class="md:col-span-3">
+                                <h3 class="text-xl font-bold mb-4" style="color: var(--text-primary);">Chinedu Okafor</h3>
+                                <div class="space-y-4" style="color: var(--text-primary);">
+                                    <p>
+                                        Chinedu Okafor na certified cybersecurity expert with over 8 years of experience for the industry. As a Naija boy wey school for University of Lagos, im don work with top companies for Nigeria and internationally to protect dem from cyber threats.
+                                    </p>
+                                    <p>
+                                        Im passion na to make sure say Nigerians dey protected for this digital age. Through im courses and workshops, im don train hundreds of aspiring cybersecurity professionals wey dey make impact for Naija and beyond.
+                                    </p>
+                                    <p>
+                                        Chinedu believe say with correct knowledge and tools, every Nigerian fit protect demself from cyber criminals and even build better career for this high-demand field.
+                                    </p>
+                                    <div class="flex space-x-4 mt-6">
+                                        <div class="text-center">
+                                            <div class="text-2xl font-bold" style="color: var(--primary-color);">2,500+</div>
+                                            <div class="text-sm" style="color: var(--text-secondary);">Students Trained</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-2xl font-bold" style="color: var(--primary-color);">8+</div>
+                                            <div class="text-sm" style="color: var(--text-secondary);">Years Experience</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-2xl font-bold" style="color: var(--primary-color);">15+</div>
+                                            <div class="text-sm" style="color: var(--text-secondary);">Certifications</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t theme-transition" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Contact Info -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center naija-flag-bg">
+                            <span class="text-white font-bold text-lg">NCS</span>
+                        </div>
+                        <span class="ml-2 font-bold text-lg" style="color: var(--primary-color);">Naija Cyber Shield</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center" style="color: var(--text-secondary);">
+                            <i class="fas fa-map-marker-alt mr-3" style="color: var(--primary-color);"></i>
+                            <span>123 Cybersecurity Street, Victoria Island, Lagos</span>
+                        </div>
+                        <div class="flex items-center" style="color: var(--text-secondary);">
+                            <i class="fas fa-phone mr-3" style="color: var(--primary-color);"></i>
+                            <span>+234 801 234 5678</span>
+                        </div>
+                        <div class="flex items-center" style="color: var(--text-secondary);">
+                            <i class="fas fa-envelope mr-3" style="color: var(--primary-color);"></i>
+                            <span>info@naijacybershield.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4" style="color: var(--text-primary);">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">Home</a></li>
+                        <li><a href="/courses" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">Courses</a></li>
+                        <li><a href="/about-us" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">About Us</a></li>
+                        <li><a href="/contact" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">Contact</a></li>
+                        <li><a href="/blog" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Popular Courses -->
+                <div>
+                    <h4 class="font-semibold mb-4" style="color: var(--text-primary);">Popular Courses</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">Naija Cyber Shield</a></li>
+                        <li><a href="#" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">Data Science for Africans</a></li>
+                        <li><a href="#" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">Digital Marketing Naija Style</a></li>
+                        <li><a href="#" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">Web Development</a></li>
+                        <li><a href="#" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">UI/UX Design</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="font-semibold mb-4" style="color: var(--text-primary);">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">FAQ</a></li>
+                        <li><a href="#" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">Terms of Service</a></li>
+                        <li><a href="#" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">Privacy Policy</a></li>
+                        <li><a href="#" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">Refund Policy</a></li>
+                        <li><a href="#" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t mt-8 pt-8 text-center theme-transition" style="border-color: var(--border-color);">
+                <p style="color: var(--text-secondary);">
+                    &copy; 2023 <span class="font-semibold" style="color: var(--primary-color);">Naija Cyber Shield</span>. All Rights Reserved.
+                </p>
+                <p class="mt-2 text-sm" style="color: var(--text-secondary);">
+                    Protecting Nigeria's Digital Future • <i class="fas fa-heart" style="color: var(--accent-color);"></i> Made with Pride in Nigeria
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        let isDarkMode = false;
+
+        themeToggle.addEventListener('click', () => {
+            isDarkMode = !isDarkMode;
+            document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+            
+            if (isDarkMode) {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            } else {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        let isMenuOpen = false;
+
+        mobileMenuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            
+            if (isMenuOpen) {
+                mobileMenu.classList.add('active');
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.remove('active');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            }
+        });
+
+        // Tab Functionality
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab');
+                
+                // Remove active class from all tabs
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('tab-active');
+                    btn.classList.add('tab-inactive');
+                });
+                
+                // Add active class to clicked tab
+                button.classList.add('tab-active');
+                button.classList.remove('tab-inactive');
+                
+                // Hide all tab contents
+                tabContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Show selected tab content
+                document.getElementById(tabId + '-tab').classList.remove('hidden');
+            });
+        });
+
+        // Accordion Functionality
+        function toggleAccordion(sectionId) {
+            const content = document.getElementById(sectionId + '-content');
+            const chevron = document.getElementById(sectionId + '-chevron');
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                chevron.style.transform = 'rotate(90deg)';
+            } else {
+                content.classList.add('hidden');
+                chevron.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Initialize first accordion section as open
+        document.addEventListener('DOMContentLoaded', () => {
+            const introChevron = document.getElementById('intro-chevron');
+            if (introChevron) {
+                introChevron.style.transform = 'rotate(90deg)';
+            }
+        });
+    </script>
+</body>
+</html>
