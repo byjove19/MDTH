@@ -3,21 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naija Cyber Shield Course - MDTH Courses</title>
+    <title>Cybersecurity Master Course - MDTH Courses</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #008751; /* Nigerian green */
-            --primary-hover: #006b41;
-            --secondary-color: #EAA903; /* Nigerian yellow/gold */
+            --primary-color: #6C63FF;
+            --primary-hover: #5B52E8;
             --text-primary: #1F2937;
             --text-secondary: #6B7280;
             --bg-primary: #FFFFFF;
             --bg-secondary: #F9FAFB;
             --border-color: #E5E7EB;
-            --accent-color: #E31B23; /* Nigerian red */
         }
 
         [data-theme="dark"] {
@@ -68,46 +65,6 @@
             display: block;
         }
 
-        .naija-flag-bg {
-            background: linear-gradient(90deg, #008751 33%, #FFFFFF 33%, #FFFFFF 66%, #E31B23 66%);
-        }
-
-        .naija-pattern {
-            background-image: 
-                radial-gradient(circle at 25% 25%, var(--secondary-color) 2%, transparent 2.5%),
-                radial-gradient(circle at 75% 75%, var(--secondary-color) 2%, transparent 2.5%);
-            background-size: 30px 30px;
-        }
-
-        .african-border {
-            border: 2px solid var(--primary-color);
-            position: relative;
-        }
-
-        .african-border::before {
-            content: "";
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            border: 1px solid var(--secondary-color);
-            z-index: -1;
-        }
-
-        .cyber-card {
-            background: var(--bg-primary);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .cyber-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-
         @media (max-width: 768px) {
             .desktop-nav {
                 display: none;
@@ -122,10 +79,9 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <a href="/" class="flex items-center">
-                    <div class="w-10 h-10 rounded-lg flex items-center justify-center naija-flag-bg">
-                        <span class="text-white font-bold text-lg">NCS</span>
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background-color: var(--primary-color);">
+                        <span class="text-white font-bold text-lg">M</span>
                     </div>
-                    <span class="ml-2 font-bold text-lg" style="color: var(--primary-color);">Naija Cyber Shield</span>
                 </a>
 
                 <!-- Desktop Navigation -->
@@ -181,97 +137,69 @@
     </nav>
 
     <!-- Course Hero Section -->
-    <section class="py-12 theme-transition naija-pattern">
+    <section class="py-12 theme-transition" style="background-color: var(--bg-secondary);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-3 gap-8">
                 <!-- Video Player -->
                 <div class="lg:col-span-2">
-                    <div class="relative bg-black rounded-lg overflow-hidden shadow-lg african-border">
+                    <div class="relative bg-black rounded-lg overflow-hidden shadow-lg">
                         <div class="aspect-video">
                             <video class="w-full h-full object-cover" poster="cybersecurity-course-preview.png" controls>
-                                <source src="https://cdn.pixabay.com/video/2024/09/24/233043_large.mp4" type="video/mp4">
+                                <source src="https://cdn.pixabay.com/video/2023/10/21/183718_large.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
-                        </div>
-                        <div class="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-md font-bold">
-                            <i class="fas fa-shield-alt mr-2"></i>Naija Cyber Shield
-                        </div>
-                    </div>
-                    
-                    <!-- Course Highlights -->
-                    <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div class="cyber-card p-4 text-center">
-                            <i class="fas fa-user-shield text-2xl mb-2" style="color: var(--primary-color);"></i>
-                            <h3 class="font-bold">Cyber Defense</h3>
-                            <p class="text-sm" style="color: var(--text-secondary);">Protect against threats</p>
-                        </div>
-                        <div class="cyber-card p-4 text-center">
-                            <i class="fas fa-network-wired text-2xl mb-2" style="color: var(--primary-color);"></i>
-                            <h3 class="font-bold">Network Security</h3>
-                            <p class="text-sm" style="color: var(--text-secondary);">Secure your infrastructure</p>
-                        </div>
-                        <div class="cyber-card p-4 text-center">
-                            <i class="fas fa-lock text-2xl mb-2" style="color: var(--primary-color);"></i>
-                            <h3 class="font-bold">Data Protection</h3>
-                            <p class="text-sm" style="color: var(--text-secondary);">Keep information safe</p>
-                        </div>
-                        <div class="cyber-card p-4 text-center">
-                            <i class="fas fa-bug text-2xl mb-2" style="color: var(--primary-color);"></i>
-                            <h3 class="font-bold">Ethical Hacking</h3>
-                            <p class="text-sm" style="color: var(--text-secondary);">Find vulnerabilities first</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Course Info Sidebar -->
                 <div class="lg:col-span-1">
-                    <div class="sticky top-24 rounded-lg border shadow-sm theme-transition cyber-card">
+                    <div class="sticky top-24 rounded-lg border shadow-sm theme-transition" style="background-color: var(--bg-primary); border-color: var(--border-color);">
                         <div class="p-6">
-                            <div class="flex justify-between items-center mb-4">
-                                <div class="text-3xl font-bold" style="color: var(--primary-color);">₦65,000</div>
-                                <div class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm font-medium">
-                                    <i class="fas fa-bolt mr-1"></i>Popular
-                                </div>
-                            </div>
+                            <div class="text-3xl font-bold mb-4" style="color: var(--primary-color);">₦55,000</div>
 
-                            <button class="w-full mb-6 px-4 py-3 rounded-lg font-medium text-white theme-transition flex items-center justify-center" style="background-color: var(--primary-color);" onmouseover="this.style.backgroundColor='var(--primary-hover)'" onmouseout="this.style.backgroundColor='var(--primary-color)'">
-                                <i class="fas fa-lock mr-2"></i> Enroll Now - Secure Your Spot
-                            </button>
+                            <button class="w-full mb-6 px-4 py-2 rounded-lg font-medium text-white theme-transition" style="background-color: var(--primary-color);" onmouseover="this.style.backgroundColor='var(--primary-hover)'" onmouseout="this.style.backgroundColor='var(--primary-color)'">Enroll Now</button>
 
                             <div class="space-y-4 mb-6">
                                 <div class="flex items-center" style="color: var(--text-secondary);">
-                                    <i class="fas fa-clock mr-3" style="color: var(--primary-color);"></i>
+                                    <svg class="w-5 h-5 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
                                     <span>4 Months Duration</span>
                                 </div>
                                 <div class="flex items-center" style="color: var(--text-secondary);">
-                                    <i class="fas fa-video mr-3" style="color: var(--primary-color);"></i>
+                                    <svg class="w-5 h-5 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                    </svg>
                                     <span>48 Video Lessons</span>
                                 </div>
                                 <div class="flex items-center" style="color: var(--text-secondary);">
-                                    <i class="fas fa-certificate mr-3" style="color: var(--primary-color);"></i>
-                                    <span>Naija Cyber Shield Certificate</span>
+                                    <svg class="w-5 h-5 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                    <span>Certificate of Completion</span>
                                 </div>
                                 <div class="flex items-center" style="color: var(--text-secondary);">
-                                    <i class="fas fa-infinity mr-3" style="color: var(--primary-color);"></i>
+                                    <svg class="w-5 h-5 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                                    </svg>
                                     <span>Lifetime Access</span>
                                 </div>
                                 <div class="flex items-center" style="color: var(--text-secondary);">
-                                    <i class="fas fa-mobile-alt mr-3" style="color: var(--primary-color);"></i>
+                                    <svg class="w-5 h-5 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                    </svg>
                                     <span>Access on Mobile and TV</span>
-                                </div>
-                                <div class="flex items-center" style="color: var(--text-secondary);">
-                                    <i class="fas fa-hands-helping mr-3" style="color: var(--primary-color);"></i>
-                                    <span>1-on-1 Mentorship</span>
                                 </div>
                             </div>
 
                             <div class="flex items-center pt-6 border-t theme-transition" style="border-color: var(--border-color);">
-                                <div class="w-12 h-12 rounded-full overflow-hidden mr-4 border-2" style="border-color: var(--primary-color);">
-                                    <img src="nigerian-instructor-avatar.png" alt="Chinedu Okafor" class="w-full h-full object-cover">
+                                <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                                    <img src="cybersecurity-instructor-avatar.png" alt="Dr. Sarah Johnson" class="w-full h-full object-cover">
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold" style="color: var(--text-primary);">Chinedu Okafor</h4>
-                                    <p class="text-sm" style="color: var(--text-secondary);">Cyber Security Expert</p>
+                                    <h4 class="font-semibold" style="color: var(--text-primary);">Dr. Sarah Johnson</h4>
+                                    <p class="text-sm" style="color: var(--text-secondary);">Cybersecurity Expert & Ethical Hacker</p>
                                 </div>
                             </div>
                         </div>
@@ -298,94 +226,118 @@
                 <div id="overview-tab" class="tab-content">
                     <div class="space-y-8">
                         <div>
-                            <h2 class="text-2xl font-bold mb-4" style="color: var(--text-primary);">Naija Cyber Shield: Complete Cybersecurity Course</h2>
+                            <h2 class="text-2xl font-bold mb-4" style="color: var(--text-primary);">Cybersecurity Master Course</h2>
                             <p class="mb-4" style="color: var(--text-secondary);">
-                                Protect yourself, your business, and Nigeria's digital future with our comprehensive cybersecurity course. Learn how to defend against cyber threats, secure networks, and understand the cybersecurity landscape with a focus on African contexts and challenges.
+                                Master the art of protecting digital systems and networks from cyber threats with our comprehensive Cybersecurity course. Learn essential skills in network security, ethical hacking, cryptography, and risk management to build a successful career in this high-demand field.
                             </p>
                             <p style="color: var(--text-secondary);">
-                                This course is designed for Nigerians and Africans who want to build cybersecurity skills to protect against local and global threats. From understanding common "Yahoo Yahoo" scams to enterprise-level security, we cover it all.
+                                This course is designed for beginners and IT professionals who want to transition into cybersecurity roles. You'll gain hands-on experience with real-world security tools and techniques while preparing for industry certifications.
                             </p>
                         </div>
 
                         <div>
-                            <h3 class="text-xl font-bold mb-4" style="color: var(--text-primary);">Wetin You Go Learn? (What Will You Learn?)</h3>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--text-primary);">What Will You Learn?</h3>
                             <div class="grid md:grid-cols-2 gap-4">
                                 <div class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mr-3 mt-0.5 flex-shrink-0"></i>
-                                    <span style="color: var(--text-primary);">Understand cybersecurity fundamentals and Naija-specific threats</span>
+                                    <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span style="color: var(--text-primary);">Network Security Fundamentals & Protocols</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mr-3 mt-0.5 flex-shrink-0"></i>
-                                    <span style="color: var(--text-primary);">Protect against common Nigerian cyber scams and fraud</span>
+                                    <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span style="color: var(--text-primary);">Ethical Hacking & Penetration Testing</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mr-3 mt-0.5 flex-shrink-0"></i>
-                                    <span style="color: var(--text-primary);">Secure networks, systems, and mobile devices</span>
+                                    <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span style="color: var(--text-primary);">Cryptography & Encryption Techniques</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mr-3 mt-0.5 flex-shrink-0"></i>
-                                    <span style="color: var(--text-primary);">Learn ethical hacking to find vulnerabilities before criminals do</span>
+                                    <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span style="color: var(--text-primary);">Vulnerability Assessment & Management</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mr-3 mt-0.5 flex-shrink-0"></i>
-                                    <span style="color: var(--text-primary);">Implement data protection strategies for businesses</span>
+                                    <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span style="color: var(--text-primary);">Incident Response & Digital Forensics</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mr-3 mt-0.5 flex-shrink-0"></i>
-                                    <span style="color: var(--text-primary);">Understand cybersecurity laws and regulations in Nigeria</span>
+                                    <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span style="color: var(--text-primary);">Security Policies & Compliance Standards</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mr-3 mt-0.5 flex-shrink-0"></i>
-                                    <span style="color: var(--text-primary);">Develop incident response plans for organizations</span>
+                                    <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span style="color: var(--text-primary);">Cloud Security & IoT Security</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mr-3 mt-0.5 flex-shrink-0"></i>
-                                    <span style="color: var(--text-primary);">Build a cybersecurity career with international certifications</span>
+                                    <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span style="color: var(--text-primary);">Prepare for Security+ and CEH Certifications</span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="grid md:grid-cols-2 gap-8">
                             <div>
-                                <h3 class="text-xl font-bold mb-4" style="color: var(--text-primary);">Wetin You Need (Requirements)</h3>
+                                <h3 class="text-xl font-bold mb-4" style="color: var(--text-primary);">Requirements</h3>
                                 <ul class="space-y-2">
                                     <li class="flex items-center">
-                                        <i class="fas fa-brain mr-2" style="color: var(--primary-color);"></i>
-                                        <span style="color: var(--text-primary);">Willingness to Learn & Open Mind</span>
+                                        <svg class="w-4 h-4 mr-2" style="color: var(--primary-color);" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span style="color: var(--text-primary);">Basic Computer Knowledge</span>
                                     </li>
                                     <li class="flex items-center">
-                                        <i class="fas fa-laptop mr-2" style="color: var(--primary-color);"></i>
-                                        <span style="color: var(--text-primary);">Computer/Laptop (Windows or Mac)</span>
+                                        <svg class="w-4 h-4 mr-2" style="color: var(--primary-color);" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span style="color: var(--text-primary);">A computer with 8GB RAM minimum</span>
                                     </li>
                                     <li class="flex items-center">
-                                        <i class="fas fa-wifi mr-2" style="color: var(--primary-color);"></i>
+                                        <svg class="w-4 h-4 mr-2" style="color: var(--primary-color);" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
                                         <span style="color: var(--text-primary);">Internet Connection</span>
                                     </li>
                                     <li class="flex items-center">
-                                        <i class="fas fa-shield-alt mr-2" style="color: var(--primary-color);"></i>
+                                        <svg class="w-4 h-4 mr-2" style="color: var(--primary-color);" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
                                         <span style="color: var(--text-primary);">No prior cybersecurity experience required</span>
                                     </li>
                                 </ul>
                             </div>
 
                             <div>
-                                <h3 class="text-xl font-bold mb-4" style="color: var(--text-primary);">Who This Course For?</h3>
+                                <h3 class="text-xl font-bold mb-4" style="color: var(--text-primary);">Who is this course for?</h3>
                                 <ul class="space-y-2">
                                     <li class="flex items-start">
                                         <div class="w-4 h-4 rounded-full mr-2 mt-2 flex-shrink-0" style="background-color: var(--primary-color);"></div>
-                                        <span style="color: var(--text-primary);">IT Professionals looking to specialize in cybersecurity</span>
+                                        <span style="color: var(--text-primary);">IT Professionals - Looking to specialize in cybersecurity</span>
                                     </li>
                                     <li class="flex items-start">
                                         <div class="w-4 h-4 rounded-full mr-2 mt-2 flex-shrink-0" style="background-color: var(--primary-color);"></div>
-                                        <span style="color: var(--text-primary);">Business Owners wanting to protect their companies</span>
+                                        <span style="color: var(--text-primary);">Career Changers - Transitioning into the cybersecurity field</span>
                                     </li>
                                     <li class="flex items-start">
                                         <div class="w-4 h-4 rounded-full mr-2 mt-2 flex-shrink-0" style="background-color: var(--primary-color);"></div>
-                                        <span style="color: var(--text-primary);">Students interested in high-demand cybersecurity careers</span>
+                                        <span style="color: var(--text-primary);">Students - Computer science or IT students seeking practical skills</span>
                                     </li>
                                     <li class="flex items-start">
                                         <div class="w-4 h-4 rounded-full mr-2 mt-2 flex-shrink-0" style="background-color: var(--primary-color);"></div>
-                                        <span style="color: var(--text-primary);">Anyone concerned about online safety in Nigeria</span>
+                                        <span style="color: var(--text-primary);">Business Owners - Wanting to understand and improve their security</span>
                                     </li>
                                 </ul>
                             </div>
@@ -400,16 +352,18 @@
                         <p class="mb-6" style="color: var(--text-secondary);">10/48 Lessons (21% Complete)</p>
 
                         <div class="space-y-4">
-                            <div class="rounded-lg border theme-transition cyber-card">
+                            <div class="rounded-lg border theme-transition" style="background-color: var(--bg-primary); border-color: var(--border-color);">
                                 <div class="accordion-section p-4 theme-transition" onclick="toggleAccordion('intro')">
                                     <div class="flex justify-between items-center">
                                         <div class="flex items-center">
-                                            <i id="intro-chevron" class="fas fa-chevron-right mr-3 transition-transform"></i>
-                                            <h3 class="font-semibold" style="color: var(--text-primary);">Introduction to Cybersecurity for Naija</h3>
+                                            <svg id="intro-chevron" class="w-5 h-5 mr-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                            <h3 class="font-semibold" style="color: var(--text-primary);">Introduction to Cybersecurity</h3>
                                         </div>
                                         <div class="flex gap-4 text-sm" style="color: var(--text-secondary);">
                                             <span>6 Lessons</span>
-                                            <span>52 min</span>
+                                            <span>65 min</span>
                                         </div>
                                     </div>
                                 </div>
@@ -417,42 +371,54 @@
                                     <div class="space-y-3">
                                         <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
                                             <div class="flex items-center">
-                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
-                                                <span style="color: var(--text-primary);">Wetin Be Cybersecurity?</span>
+                                                <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-7 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+                                                </svg>
+                                                <span style="color: var(--text-primary);">What is Cybersecurity?</span>
                                             </div>
-                                            <span class="text-sm" style="color: var(--text-secondary);">12:25</span>
+                                            <span class="text-sm" style="color: var(--text-secondary);">15:25</span>
                                         </div>
                                         <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
                                             <div class="flex items-center">
-                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
-                                                <span style="color: var(--text-primary);">Cyber Threats We Dey Face for Naija</span>
+                                                <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-7 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+                                                </svg>
+                                                <span style="color: var(--text-primary);">Cybersecurity Threats & Attack Vectors</span>
                                             </div>
-                                            <span class="text-sm" style="color: var(--text-secondary);">10:15</span>
+                                            <span class="text-sm" style="color: var(--text-secondary);">18:15</span>
                                         </div>
                                         <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
                                             <div class="flex items-center">
-                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
-                                                <span style="color: var(--text-primary);">Understanding Yahoo Yahoo & Online Scams</span>
+                                                <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-7 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+                                                </svg>
+                                                <span style="color: var(--text-primary);">Security Principles: CIA Triad</span>
                                             </div>
-                                            <span class="text-sm" style="color: var(--text-secondary);">14:40</span>
+                                            <span class="text-sm" style="color: var(--text-secondary);">12:40</span>
                                         </div>
                                         <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
                                             <div class="flex items-center">
-                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
-                                                <span style="color: var(--text-primary);">Cybersecurity Career for Nigeria</span>
+                                                <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-7 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+                                                </svg>
+                                                <span style="color: var(--text-primary);">Cybersecurity Career Paths</span>
                                             </div>
-                                            <span class="text-sm" style="color: var(--text-secondary);">08:30</span>
+                                            <span class="text-sm" style="color: var(--text-secondary);">10:30</span>
                                         </div>
                                         <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
                                             <div class="flex items-center">
-                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
+                                                <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-7 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+                                                </svg>
                                                 <span style="color: var(--text-primary);">Setting Up Your Security Lab</span>
                                             </div>
-                                            <span class="text-sm" style="color: var(--text-secondary);">05:20</span>
+                                            <span class="text-sm" style="color: var(--text-secondary);">07:15</span>
                                         </div>
                                         <div class="flex justify-between items-center py-2">
                                             <div class="flex items-center">
-                                                <i class="fas fa-file-pdf mr-3" style="color: var(--primary-color);"></i>
+                                                <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                                </svg>
                                                 <span style="color: var(--text-primary);">Course Resources & Tools</span>
                                             </div>
                                             <span class="text-sm" style="color: var(--text-secondary);">PDF</span>
@@ -461,16 +427,18 @@
                                 </div>
                             </div>
 
-                            <div class="rounded-lg border theme-transition cyber-card">
+                            <div class="rounded-lg border theme-transition" style="background-color: var(--bg-primary); border-color: var(--border-color);">
                                 <div class="accordion-section p-4 theme-transition" onclick="toggleAccordion('network')">
                                     <div class="flex justify-between items-center">
                                         <div class="flex items-center">
-                                            <i id="network-chevron" class="fas fa-chevron-right mr-3 transition-transform"></i>
-                                            <h3 class="font-semibold" style="color: var(--text-primary);">Network Security & Defense</h3>
+                                            <svg id="network-chevron" class="w-5 h-5 mr-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                            <h3 class="font-semibold" style="color: var(--text-primary);">Network Security Fundamentals</h3>
                                         </div>
                                         <div class="flex gap-4 text-sm" style="color: var(--text-secondary);">
                                             <span>8 Lessons</span>
-                                            <span>96 min</span>
+                                            <span>112 min</span>
                                         </div>
                                     </div>
                                 </div>
@@ -478,57 +446,73 @@
                                     <div class="space-y-3">
                                         <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
                                             <div class="flex items-center">
-                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
-                                                <span style="color: var(--text-primary);">Network Fundamentals for Security</span>
+                                                <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-7 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+                                                </svg>
+                                                <span style="color: var(--text-primary);">TCP/IP Protocol Suite</span>
                                             </div>
-                                            <span class="text-sm" style="color: var(--text-secondary);">15:20</span>
+                                            <span class="text-sm" style="color: var(--text-secondary);">18:20</span>
                                         </div>
                                         <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
                                             <div class="flex items-center">
-                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
-                                                <span style="color: var(--text-primary);">Firewalls & Network Protection</span>
+                                                <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-7 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+                                                </svg>
+                                                <span style="color: var(--text-primary);">Firewalls & Network Segmentation</span>
                                             </div>
-                                            <span class="text-sm" style="color: var(--text-secondary);">18:30</span>
+                                            <span class="text-sm" style="color: var(--text-secondary);">22:30</span>
                                         </div>
                                         <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
                                             <div class="flex items-center">
-                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
-                                                <span style="color: var(--text-primary);">Securing Wi-Fi Networks</span>
+                                                <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-7 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+                                                </svg>
+                                                <span style="color: var(--text-primary);">Intrusion Detection & Prevention Systems</span>
                                             </div>
-                                            <span class="text-sm" style="color: var(--text-secondary);">14:15</span>
+                                            <span class="text-sm" style="color: var(--text-secondary);">16:15</span>
                                         </div>
                                         <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
                                             <div class="flex items-center">
-                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
-                                                <span style="color: var(--text-primary);">Intrusion Detection Systems</span>
+                                                <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-7 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+                                                </svg>
+                                                <span style="color: var(--text-primary);">VPN Technologies & Implementation</span>
                                             </div>
-                                            <span class="text-sm" style="color: var(--text-secondary);">12:40</span>
+                                            <span class="text-sm" style="color: var(--text-secondary);">14:40</span>
                                         </div>
                                         <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
                                             <div class="flex items-center">
-                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
-                                                <span style="color: var(--text-primary);">VPNs & Secure Remote Access</span>
+                                                <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-7 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+                                                </svg>
+                                                <span style="color: var(--text-primary);">Wireless Network Security</span>
                                             </div>
-                                            <span class="text-sm" style="color: var(--text-secondary);">08:35</span>
+                                            <span class="text-sm" style="color: var(--text-secondary);">12:35</span>
                                         </div>
                                         <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
                                             <div class="flex items-center">
-                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
-                                                <span style="color: var(--text-primary);">Network Monitoring Tools</span>
-                                            </div>
-                                            <span class="text-sm" style="color: var(--text-secondary);">10:20</span>
-                                        </div>
-                                        <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
-                                            <div class="flex items-center">
-                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
-                                                <span style="color: var(--text-primary);">Practical: Securing a Small Business Network</span>
+                                                <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-7 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+                                                </svg>
+                                                <span style="color: var(--text-primary);">Network Monitoring & Traffic Analysis</span>
                                             </div>
                                             <span class="text-sm" style="color: var(--text-secondary);">15:10</span>
                                         </div>
+                                        <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
+                                            <div class="flex items-center">
+                                                <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-7 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+                                                </svg>
+                                                <span style="color: var(--text-primary);">Network Hardening Techniques</span>
+                                            </div>
+                                            <span class="text-sm" style="color: var(--text-secondary);">10:20</span>
+                                        </div>
                                         <div class="flex justify-between items-center py-2">
                                             <div class="flex items-center">
-                                                <i class="fas fa-file-pdf mr-3" style="color: var(--primary-color);"></i>
-                                                <span style="color: var(--text-primary);">Network Security Checklist</span>
+                                                <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                                </svg>
+                                                <span style="color: var(--text-primary);">Network Security Best Practices</span>
                                             </div>
                                             <span class="text-sm" style="color: var(--text-secondary);">PDF</span>
                                         </div>
@@ -536,16 +520,18 @@
                                 </div>
                             </div>
 
-                            <div class="rounded-lg border theme-transition cyber-card">
+                            <div class="rounded-lg border theme-transition" style="background-color: var(--bg-primary); border-color: var(--border-color);">
                                 <div class="accordion-section p-4 theme-transition" onclick="toggleAccordion('ethical')">
                                     <div class="flex justify-between items-center">
                                         <div class="flex items-center">
-                                            <i id="ethical-chevron" class="fas fa-chevron-right mr-3 transition-transform"></i>
+                                            <svg id="ethical-chevron" class="w-5 h-5 mr-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                            </svg>
                                             <h3 class="font-semibold" style="color: var(--text-primary);">Ethical Hacking & Penetration Testing</h3>
                                         </div>
                                         <div class="flex gap-4 text-sm" style="color: var(--text-secondary);">
                                             <span>7 Lessons</span>
-                                            <span>88 min</span>
+                                            <span>98 min</span>
                                         </div>
                                     </div>
                                 </div>
@@ -553,50 +539,64 @@
                                     <div class="space-y-3">
                                         <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
                                             <div class="flex items-center">
-                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
+                                                <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-7 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+                                                </svg>
                                                 <span style="color: var(--text-primary);">Introduction to Ethical Hacking</span>
                                             </div>
-                                            <span class="text-sm" style="color: var(--text-secondary);">10:15</span>
+                                            <span class="text-sm" style="color: var(--text-secondary);">12:15</span>
                                         </div>
                                         <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
                                             <div class="flex items-center">
-                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
-                                                <span style="color: var(--text-primary);">Reconnaissance & Information Gathering</span>
+                                                <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-7 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+                                                </svg>
+                                                <span style="color: var(--text-primary);">Information Gathering & Reconnaissance</span>
                                             </div>
                                             <span class="text-sm" style="color: var(--text-secondary);">18:30</span>
                                         </div>
                                         <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
                                             <div class="flex items-center">
-                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
-                                                <span style="color: var(--text-primary);">Vulnerability Scanning & Analysis</span>
+                                                <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-7 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+                                                </svg>
+                                                <span style="color: var(--text-primary);">Vulnerability Scanning & Assessment</span>
                                             </div>
-                                            <span class="text-sm" style="color: var(--text-secondary);">12:40</span>
+                                            <span class="text-sm" style="color: var(--text-secondary);">15:40</span>
                                         </div>
                                         <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
                                             <div class="flex items-center">
-                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
+                                                <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-7 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+                                                </svg>
                                                 <span style="color: var(--text-primary);">Exploitation Techniques</span>
                                             </div>
-                                            <span class="text-sm" style="color: var(--text-secondary);">14:25</span>
+                                            <span class="text-sm" style="color: var(--text-secondary);">16:25</span>
                                         </div>
                                         <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
                                             <div class="flex items-center">
-                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
-                                                <span style="color: var(--text-primary);">Web Application Security Testing</span>
+                                                <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-7 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+                                                </svg>
+                                                <span style="color: var(--text-primary);">Post-Exploitation & Maintaining Access</span>
                                             </div>
-                                            <span class="text-sm" style="color: var(--text-secondary);">16:15</span>
+                                            <span class="text-sm" style="color: var(--text-secondary);">14:15</span>
                                         </div>
                                         <div class="flex justify-between items-center py-2 border-b theme-transition" style="border-color: var(--border-color);">
                                             <div class="flex items-center">
-                                                <i class="fas fa-play-circle mr-3" style="color: var(--primary-color);"></i>
-                                                <span style="color: var(--text-primary);">Social Engineering & Human Factors</span>
+                                                <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-7 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+                                                </svg>
+                                                <span style="color: var(--text-primary);">Reporting & Documentation</span>
                                             </div>
                                             <span class="text-sm" style="color: var(--text-secondary);">10:30</span>
                                         </div>
                                         <div class="flex justify-between items-center py-2">
                                             <div class="flex items-center">
-                                                <i class="fas fa-file-pdf mr-3" style="color: var(--primary-color);"></i>
-                                                <span style="color: var(--text-primary);">Ethical Hacking Legal Framework in Nigeria</span>
+                                                <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                                </svg>
+                                                <span style="color: var(--text-primary);">Penetration Testing Methodology</span>
                                             </div>
                                             <span class="text-sm" style="color: var(--text-secondary);">PDF</span>
                                         </div>
@@ -616,81 +616,139 @@
                                 <div class="text-4xl font-bold" style="color: var(--primary-color);">4.8</div>
                                 <div>
                                     <div class="flex text-yellow-400 mb-1">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
+                                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                        <svg class="w-5 h-5" viewBox="0 0 20 20">
+                                            <defs>
+                                                <linearGradient id="half-fill">
+                                                    <stop offset="50%" stop-color="#FBBF24"/>
+                                                    <stop offset="50%" stop-color="transparent"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <path fill="url(#half-fill)" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
                                     </div>
-                                    <div class="text-sm" style="color: var(--text-secondary);">Based on 324 reviews</div>
+                                    <div class="text-sm" style="color: var(--text-secondary);">Based on 234 reviews</div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="space-y-6">
-                            <div class="rounded-lg border theme-transition cyber-card">
+                            <div class="rounded-lg border theme-transition" style="background-color: var(--bg-primary); border-color: var(--border-color);">
                                 <div class="p-6">
                                     <div class="flex items-center mb-4">
-                                        <div class="w-10 h-10 rounded-full overflow-hidden mr-4 border-2" style="border-color: var(--primary-color);">
-                                            <img src="nigerian-student-avatar-1.png" alt="Adebayo Adekunle" class="w-full h-full object-cover">
+                                        <div class="w-10 h-10 rounded-full overflow-hidden mr-4">
+                                            <img src="cybersecurity-student-avatar-1.png" alt="David Chen" class="w-full h-full object-cover">
                                         </div>
                                         <div>
-                                            <h4 class="font-semibold" style="color: var(--text-primary);">Adebayo Adekunle</h4>
-                                            <p class="text-sm" style="color: var(--text-secondary);">Lagos, Nigeria • 2 weeks ago</p>
+                                            <h4 class="font-semibold" style="color: var(--text-primary);">David Chen</h4>
+                                            <p class="text-sm" style="color: var(--text-secondary);">2 weeks ago</p>
                                         </div>
                                     </div>
                                     <div class="flex text-yellow-400 mb-2">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
                                     </div>
-                                    <p style="color: var(--text-primary);">"This course don change my life! As a Naija guy wey dey run small business, I never know say cybersecurity fit be like this. Now I don protect my business from Yahoo Yahoo boys. Chinedu na real Oga for this cybersecurity matter!"</p>
+                                    <p style="color: var(--text-primary);">This course completely transformed my understanding of cybersecurity. The hands-on labs were challenging but incredibly rewarding. I went from knowing nothing to being able to perform basic penetration tests in just a few weeks.</p>
                                 </div>
                             </div>
 
-                            <div class="rounded-lg border theme-transition cyber-card">
+                            <div class="rounded-lg border theme-transition" style="background-color: var(--bg-primary); border-color: var(--border-color);">
                                 <div class="p-6">
                                     <div class="flex items-center mb-4">
-                                        <div class="w-10 h-10 rounded-full overflow-hidden mr-4 border-2" style="border-color: var(--primary-color);">
-                                            <img src="nigerian-student-avatar-2.png" alt="Chioma Eze" class="w-full h-full object-cover">
+                                        <div class="w-10 h-10 rounded-full overflow-hidden mr-4">
+                                            <img src="cybersecurity-student-avatar-2.png" alt="Sophia Williams" class="w-full h-full object-cover">
                                         </div>
                                         <div>
-                                            <h4 class="font-semibold" style="color: var(--text-primary);">Chioma Eze</h4>
-                                            <p class="text-sm" style="color: var(--text-secondary);">Abuja, Nigeria • 1 month ago</p>
+                                            <h4 class="font-semibold" style="color: var(--text-primary);">Sophia Williams</h4>
+                                            <p class="text-sm" style="color: var(--text-secondary);">1 month ago</p>
                                         </div>
                                     </div>
                                     <div class="flex text-yellow-400 mb-2">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                        <svg class="w-4 h-4" viewBox="0 0 20 20">
+                                            <defs>
+                                                <linearGradient id="half-fill-2">
+                                                    <stop offset="50%" stop-color="#FBBF24"/>
+                                                    <stop offset="50%" stop-color="transparent"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <path fill="url(#half-fill-2)" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
                                     </div>
-                                    <p style="color: var(--text-primary);">"I was looking for a cybersecurity course wey go fit our Naija context. This one na correct package! The way dem break down how to protect against our local threats, e dey make sense well well. I don even use the knowledge secure my papa business. Naija Cyber Shield no be joke!"</p>
+                                    <p style="color: var(--text-primary);">As a career changer from marketing to cybersecurity, this course was exactly what I needed. The practical approach and real-world scenarios helped me build a solid foundation. I've already started applying these skills in my new role.</p>
                                 </div>
                             </div>
 
-                            <div class="rounded-lg border theme-transition cyber-card">
+                            <div class="rounded-lg border theme-transition" style="background-color: var(--bg-primary); border-color: var(--border-color);">
                                 <div class="p-6">
                                     <div class="flex items-center mb-4">
-                                        <div class="w-10 h-10 rounded-full overflow-hidden mr-4 border-2" style="border-color: var(--primary-color);">
-                                            <img src="nigerian-student-avatar-3.png" alt="Emeka Okoro" class="w-full h-full object-cover">
+                                        <div class="w-10 h-10 rounded-full overflow-hidden mr-4">
+                                            <img src="cybersecurity-student-avatar-3.png" alt="Michael Rodriguez" class="w-full h-full object-cover">
                                         </div>
                                         <div>
-                                            <h4 class="font-semibold" style="color: var(--text-primary);">Emeka Okoro</h4>
-                                            <p class="text-sm" style="color: var(--text-secondary);">Port Harcourt, Nigeria • 3 weeks ago</p>
+                                            <h4 class="font-semibold" style="color: var(--text-primary);">Michael Rodriguez</h4>
+                                            <p class="text-sm" style="color: var(--text-secondary);">3 weeks ago</p>
                                         </div>
                                     </div>
                                     <div class="flex text-yellow-400 mb-2">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
+                                        <svg class="w-4 h-4" viewBox="0 0 20 20">
+                                            <defs>
+                                                <linearGradient id="half-fill-3">
+                                                    <stop offset="50%" stop-color="#FBBF24"/>
+                                                    <stop offset="50%" stop-color="transparent"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <path fill="url(#half-fill-3)" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                        </svg>
                                     </div>
-                                    <p style="color: var(--text-primary);">"As an IT guy for one bank for here, I think say I don know cybersecurity. But this course open my eyes to plenty things wey I never know. The ethical hacking section na bomb! Now I fit protect our systems better. I recommend this course for any Nigerian wey serious about cybersecurity."</p>
+                                    <p style="color: var(--text-primary);">The ethical hacking modules were exceptional. I appreciated how the instructor explained both the offensive and defensive aspects of cybersecurity. The course materials are comprehensive and well-organized.</p>
                                 </div>
                             </div>
                         </div>
@@ -703,36 +761,22 @@
                         <h2 class="text-2xl font-bold mb-6" style="color: var(--text-primary);">About the Instructor</h2>
                         <div class="grid md:grid-cols-4 gap-8">
                             <div class="md:col-span-1">
-                                <div class="w-48 h-48 rounded-lg overflow-hidden mx-auto md:mx-0 border-4" style="border-color: var(--primary-color);">
-                                    <img src="nigerian-instructor-professional-photo.png" alt="Chinedu Okafor" class="w-full h-full object-cover">
+                                <div class="w-48 h-48 rounded-lg overflow-hidden mx-auto md:mx-0">
+                                    <img src="cybersecurity-instructor-professional-photo.png" alt="Dr. Sarah Johnson" class="w-full h-full object-cover">
                                 </div>
                             </div>
                             <div class="md:col-span-3">
-                                <h3 class="text-xl font-bold mb-4" style="color: var(--text-primary);">Chinedu Okafor</h3>
+                                <h3 class="text-xl font-bold mb-4" style="color: var(--text-primary);">Dr. Sarah Johnson</h3>
                                 <div class="space-y-4" style="color: var(--text-primary);">
                                     <p>
-                                        Chinedu Okafor na certified cybersecurity expert with over 8 years of experience for the industry. As a Naija boy wey school for University of Lagos, im don work with top companies for Nigeria and internationally to protect dem from cyber threats.
+                                        Cybersecurity Expert & Ethical Hacker with over 12 years of experience in the industry. Dr. Johnson has worked with government agencies, financial institutions, and Fortune 500 companies to strengthen their security posture and protect against cyber threats.
                                     </p>
                                     <p>
-                                        Im passion na to make sure say Nigerians dey protected for this digital age. Through im courses and workshops, im don train hundreds of aspiring cybersecurity professionals wey dey make impact for Naija and beyond.
+                                        She holds multiple industry certifications including CISSP, CEH, and CISM, and has published research on advanced persistent threats and zero-day vulnerabilities. Dr. Johnson is passionate about making cybersecurity accessible to everyone and has trained thousands of professionals through her courses and workshops.
                                     </p>
                                     <p>
-                                        Chinedu believe say with correct knowledge and tools, every Nigerian fit protect demself from cyber criminals and even build better career for this high-demand field.
+                                        Her teaching philosophy emphasizes practical, hands-on learning that prepares students for real-world security challenges while maintaining a strong ethical foundation.
                                     </p>
-                                    <div class="flex space-x-4 mt-6">
-                                        <div class="text-center">
-                                            <div class="text-2xl font-bold" style="color: var(--primary-color);">2,500+</div>
-                                            <div class="text-sm" style="color: var(--text-secondary);">Students Trained</div>
-                                        </div>
-                                        <div class="text-center">
-                                            <div class="text-2xl font-bold" style="color: var(--primary-color);">8+</div>
-                                            <div class="text-sm" style="color: var(--text-secondary);">Years Experience</div>
-                                        </div>
-                                        <div class="text-center">
-                                            <div class="text-2xl font-bold" style="color: var(--primary-color);">15+</div>
-                                            <div class="text-sm" style="color: var(--text-secondary);">Certifications</div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -748,24 +792,28 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <!-- Contact Info -->
                 <div>
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center naija-flag-bg">
-                            <span class="text-white font-bold text-lg">NCS</span>
-                        </div>
-                        <span class="ml-2 font-bold text-lg" style="color: var(--primary-color);">Naija Cyber Shield</span>
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background-color: var(--primary-color);">
+                        <span class="text-white font-bold text-lg">M</span>
                     </div>
                     <div class="space-y-3">
                         <div class="flex items-center" style="color: var(--text-secondary);">
-                            <i class="fas fa-map-marker-alt mr-3" style="color: var(--primary-color);"></i>
-                            <span>123 Cybersecurity Street, Victoria Island, Lagos</span>
+                            <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>123 Education Street, Learning City</span>
                         </div>
                         <div class="flex items-center" style="color: var(--text-secondary);">
-                            <i class="fas fa-phone mr-3" style="color: var(--primary-color);"></i>
-                            <span>+234 801 234 5678</span>
+                            <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span>+234 123 456 7890</span>
                         </div>
                         <div class="flex items-center" style="color: var(--text-secondary);">
-                            <i class="fas fa-envelope mr-3" style="color: var(--primary-color);"></i>
-                            <span>info@naijacybershield.com</span>
+                            <svg class="w-4 h-4 mr-3" style="color: var(--primary-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>info@mdthcourses.com</span>
                         </div>
                     </div>
                 </div>
@@ -786,11 +834,11 @@
                 <div>
                     <h4 class="font-semibold mb-4" style="color: var(--text-primary);">Popular Courses</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">Naija Cyber Shield</a></li>
-                        <li><a href="#" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">Data Science for Africans</a></li>
-                        <li><a href="#" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">Digital Marketing Naija Style</a></li>
+                        <li><a href="#" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">Cybersecurity</a></li>
+                        <li><a href="#" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">Graphic Design</a></li>
                         <li><a href="#" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">Web Development</a></li>
-                        <li><a href="#" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">UI/UX Design</a></li>
+                        <li><a href="#" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">Data Science</a></li>
+                        <li><a href="#" class="theme-transition" style="color: var(--text-secondary);" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">Digital Marketing</a></li>
                     </ul>
                 </div>
 
@@ -809,10 +857,7 @@
 
             <div class="border-t mt-8 pt-8 text-center theme-transition" style="border-color: var(--border-color);">
                 <p style="color: var(--text-secondary);">
-                    &copy; 2023 <span class="font-semibold" style="color: var(--primary-color);">Naija Cyber Shield</span>. All Rights Reserved.
-                </p>
-                <p class="mt-2 text-sm" style="color: var(--text-secondary);">
-                    Protecting Nigeria's Digital Future • <i class="fas fa-heart" style="color: var(--accent-color);"></i> Made with Pride in Nigeria
+                    &copy; 2023 <span class="font-semibold" style="color: var(--primary-color);">MDTH Courses</span>. All Rights Reserved.
                 </p>
             </div>
         </div>

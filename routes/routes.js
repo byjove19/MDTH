@@ -74,9 +74,11 @@ router.get('/project-management', (req, res) => {
 }
 );
 //cyber-security
+
 router.get('/cybersecurity', (req, res) => {   
     res.sendFile(path.join(viewsPath, 'cybersecurity.html')); 
 }
+
 );
 //ai-ml
 router.get('/AI', (req, res) => {
