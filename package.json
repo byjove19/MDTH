@@ -1,29 +1,45 @@
 {
   "name": "mdth",
   "version": "1.0.0",
-  "description": "**MDTH** is an affordable, industry-aligned tech education platform designed to make high-quality learning accessible to everyone.   Our mission is to bridge the skill gap in tech by providing structured courses, mentorship, and real-world projects that prepare learners for competitive roles in the global job market.",
-  "main": "script.js",
+  "description": "MDTH is an affordable, industry-aligned tech education platform designed to make high-quality learning accessible to everyone.",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.6.2",
     "bcryptjs": "^3.0.3",
-
-    
+    "cloudinary": "^1.41.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.1.5",
     "express-session": "^1.18.2",
+    "express-validator": "^7.0.1",
+    "fs-extra": "^11.2.0",
+    "get-video-id": "^3.6.0",
+    "helmet": "^7.1.0",
+    "hpp": "^0.2.3",
     "jsonwebtoken": "^9.0.2",
+    "moment": "^2.29.4",
     "mongoose": "^7.8.7",
-    "nodemailer": "^7.0.5"
+    "multer": "^1.4.5-lts.1",
+    "multer-storage-cloudinary": "^4.0.0",
+    "nodemailer": "^7.0.11",
+    "pdfkit": "^0.14.0",
+    "uuid": "^9.0.1",
+    "validator": "^13.11.0",
+    "xss-clean": "^0.1.4"
   },
   "devDependencies": {
+    "morgan": "^1.10.0",
     "nodemon": "^3.1.11"
   }
 }

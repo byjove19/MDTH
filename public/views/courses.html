@@ -3,62 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <!-- Favicon -->
-    <link rel="icon" href="images/MDTH LOGO.jpg" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
-    <title>MDTH Courses | Learn Next-Gen Tech Skills</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Enhanced SEO Meta Tags -->
+    <title>MDTH Tech Courses | Learn Web Development, Data Science, UI/UX Design Online</title>
+    <meta name="description" content="Master in-demand tech skills with MDTH's industry-leading online courses. Affordable training in Web Development, Data Science, UI/UX Design, Cybersecurity, Digital Marketing and more. Start your tech career today!">
+    <meta name="keywords" content="online tech courses, web development training, data science course, UI/UX design, digital marketing, cybersecurity training, programming bootcamp, affordable tech education, Nigeria tech courses, coding classes">
+    <meta name="author" content="MDTH - Making A Difference Tech Hub">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="MDTH Tech Courses | Learn In-Demand Tech Skills Online">
+    <meta property="og:description" content="Master web development, data science, UI/UX design and more with industry-leading online courses at MDTH.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.mdth.com/courses">
+    <meta property="og:image" content="https://www.mdth.com/images/courses-social-share.jpg">
+    
+    <!-- Schema Markup for Courses -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Web Development Bootcamp",
+      "description": "Master HTML, CSS, JavaScript and modern frameworks to build responsive websites.",
+      "provider": {
+        "@type": "Organization",
+        "name": "MDTH",
+        "sameAs": "https://www.mdth.com"
+      }
+    }
+    </script>
+    
+    <link rel="canonical" href="https://www.mdth.com/courses">
+    <link rel="icon" href="images/MDTH LOGO.jpg" type="image/x-icon">
+    
+    <!-- Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <style>
-        :root {
-            --primary-color: #2563EB;
-            --primary-light: #93C5FD;
-            --secondary-color: #4F46E5;
-            --accent-color: #EC4899;
-            --text-color: #1F2937;
-            --text-light: #6B7280;
-            --bg-color: #F9FAFB;
-            --card-bg: #FFFFFF;
-            --border-color: #E5E7EB;
-            --shadow-color: rgba(0, 0, 0, 0.05);
-            --success-color: #10B981;
-            --error-color: #EF4444;
-            --warning-color: #F59E0B;
-            --transition: all 0.3s ease;
-        }
-
-        .dark-mode {
-            --primary-color: #3B82F6;
-            --primary-light: #1E40AF;
-            --secondary-color: #6366F1;
-            --accent-color: #EC4899;
-            --text-color: #F9FAFB;
-            --text-light: #D1D5DB;
-            --bg-color: #111827;
-            --card-bg: #1F2937;
-            --border-color: #374151;
-            --shadow-color: rgba(0, 0, 0, 0.2);
-        }
-
+        /* ====== RESET & BASE STYLES ====== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            transition: var(--transition);
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
             line-height: 1.6;
-            transition: background-color 0.3s ease;
+            color: #333;
+            background: #fff;
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4 {
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
         .container {
@@ -67,278 +73,528 @@
             padding: 0 20px;
         }
 
-        /* Navigation */
+        /* ====== NAVBAR STYLES (Same as index) ====== */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
-            background-color: var(--card-bg);
-            box-shadow: 0 1px 3px var(--shadow-color);
+            padding: 20px 40px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
         .logo img {
-            height: 50px;
+            height: 40px;
             width: auto;
         }
 
         .nav-links {
             display: flex;
+            list-style: none;
             gap: 30px;
             align-items: center;
-            list-style: none;
         }
 
         .nav-links a {
-            color: var(--text-color);
             font-weight: 500;
-            text-decoration: none;
-            position: relative;
-            padding: 8px 0;
+            transition: color 0.3s ease;
+            color: #333;
         }
 
         .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            bottom: 0;
-            left: 0;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            transition: width 0.3s ease;
-            border-radius: 3px;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+            color: #6C63FF;
         }
 
         .auth-buttons {
             display: flex;
-            gap: 15px;
             align-items: center;
+            gap: 15px;
         }
 
         .btn {
-            padding: 10px 20px;
+            padding: 10px 24px;
             border-radius: 8px;
             font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .btn-signup {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: #6C63FF;
             color: white;
-            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
         }
 
         .btn-signup:hover {
+            background: #4A40E5;
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
         }
 
         .btn-login {
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            background-color: transparent;
+            border: 2px solid #6C63FF;
+            color: #6C63FF;
         }
 
         .btn-login:hover {
-            background-color: rgba(37, 99, 235, 0.1);
+            background: #6C63FF;
+            color: white;
         }
 
-        /* Dark Mode Toggle */
-        .theme-switch-wrapper {
-            display: flex;
-            align-items: center;
-            margin-left: 15px;
-        }
-
-        .theme-switch {
-            display: inline-block;
-            position: relative;
-            width: 60px;
-            height: 34px;
-        }
-
-        .theme-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: var(--primary-light);
-            transition: .4s;
-            border-radius: 34px;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-
-        input:checked + .slider {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-        }
-
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
-
-        .slider i {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 14px;
-        }
-
-        .fa-sun {
-            left: 8px;
-            color: #F59E0B;
-        }
-
-        .fa-moon {
-            right: 8px;
-            color: #E5E7EB;
-        }
-
-        /* Mobile Menu */
-        .hamburger {
-            display: none;
-            cursor: pointer;
+        .theme-toggle {
             background: none;
             border: none;
-            font-size: 1.5rem;
-            color: var(--text-color);
+            font-size: 20px;
+            color: #666;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
         }
 
-        /* Hero Section */
+        .theme-toggle:hover {
+            background: #f0f0f0;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .hamburger .bar {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* ====== SIDE MENU (Same as index) ====== */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 1001;
+            overflow-y: auto;
+        }
+
+        .side-menu.active {
+            right: 0;
+        }
+
+        .side-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .side-menu-logo {
+            height: 30px;
+            width: auto;
+        }
+
+        .cancel-icon {
+            font-size: 28px;
+            color: #666;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .cancel-icon:hover {
+            color: #333;
+        }
+
+        .menu-separator {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 0 20px;
+        }
+
+        .theme-switcher {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .theme-switcher p {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .theme-icon {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #666;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .theme-icon:hover {
+            background: #f0f0f0;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            padding: 20px;
+        }
+
+        .mobile-nav-links li {
+            margin-bottom: 15px;
+        }
+
+        .mobile-nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 10px 0;
+        }
+
+        .mobile-nav-links a:hover {
+            color: #6C63FF;
+        }
+
+        .mobile-auth-buttons {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* ====== COURSES HERO SECTION ====== */
         .courses-hero {
-            padding: 80px 5%;
+            padding: 100px 40px 60px;
             text-align: center;
-            background: linear-gradient(135deg, var(--bg-color) 50%, rgba(147, 197, 253, 0.1) 100%);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .courses-hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(74, 64, 229, 0.1) 100%);
+            border-radius: 50%;
+            top: -150px;
+            right: -100px;
+        }
+
+        .courses-hero::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(74, 64, 229, 0.1) 100%);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -50px;
+        }
+
+        .courses-hero .container {
+            position: relative;
+            z-index: 1;
         }
 
         .courses-hero h1 {
-            font-size: 2.8rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: #333;
+        }
+
+        .courses-hero h1 span {
+            background: linear-gradient(135deg, #6C63FF 0%, #4A40E5 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .courses-hero p {
-            color: var(--text-light);
-            font-size: 1.2rem;
+            color: #666;
             max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* ====== IMPROVED SEARCH SYSTEM ====== */
+        .search-container {
+            position: relative;
+            max-width: 600px;
             margin: 0 auto 30px;
         }
 
-        /* Search and Filter */
-        .courses-search-container {
+        .search-input-wrapper {
             position: relative;
-            max-width: 600px;
-            margin: 0 auto 40px;
         }
 
         .search-input {
             width: 100%;
-            padding: 15px 50px 15px 20px;
-            border: 2px solid var(--border-color);
-            border-radius: 10px;
-            font-size: 1rem;
-            background-color: var(--card-bg);
-            color: var(--text-color);
-            transition: var(--transition);
+            padding: 18px 60px 18px 25px;
+            border: 2px solid #e0e0e0;
+            border-radius: 16px;
+            font-size: 16px;
+            background: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
         .search-input:focus {
             outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+            border-color: #6C63FF;
+            box-shadow: 0 4px 25px rgba(108, 99, 255, 0.15);
+            transform: translateY(-2px);
         }
 
-        .courses-search-container i {
+        .search-icon {
             position: absolute;
-            right: 20px;
+            right: 25px;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--text-light);
+            color: #666;
+            font-size: 18px;
+            transition: color 0.3s ease;
         }
 
-        .courses-categories {
-            margin-bottom: 40px;
+        .search-input:focus + .search-icon {
+            color: #6C63FF;
         }
 
-        .courses-categories ul {
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+            z-index: 100;
+            display: none;
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #f0f0f0;
+        }
+
+        .search-results.active {
+            display: block;
+            animation: fadeInUp 0.3s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .search-result-item {
+            padding: 18px 25px;
+            border-bottom: 1px solid #f8f9fa;
+            cursor: pointer;
+            transition: all 0.3s ease;
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+            align-items: center;
             gap: 15px;
-            list-style: none;
         }
 
-        .courses-categories a {
-            padding: 8px 20px;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 50px;
-            color: var(--text-color);
-            text-decoration: none;
+        .search-result-item:hover {
+            background: #f8f9fa;
+            padding-left: 30px;
+        }
+
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+
+        .search-result-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #6C63FF 0%, #4A40E5 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+        }
+
+        .search-result-content {
+            flex: 1;
+        }
+
+        .search-result-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+            font-size: 15px;
+        }
+
+        .search-result-category {
+            font-size: 13px;
+            color: #6C63FF;
             font-weight: 500;
-            transition: var(--transition);
+            display: inline-block;
+            padding: 3px 10px;
+            background: rgba(108, 99, 255, 0.1);
+            border-radius: 12px;
         }
 
-        .courses-categories a:hover, 
-        .courses-categories a.active {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        .no-results {
+            padding: 40px 20px;
+            text-align: center;
+            color: #666;
+        }
+
+        .no-results i {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+
+        /* ====== FILTER & CATEGORIES ====== */
+        .filters-section {
+            padding: 40px 40px 30px;
+            background: white;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .filters-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .categories-filter {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 10px 22px;
+            border-radius: 25px;
+            background: #f8f9fa;
+            color: #666;
+            font-weight: 500;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .category-btn:hover {
+            background: linear-gradient(135deg, #6C63FF 0%, #4A40E5 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.2);
+        }
+
+        .category-btn.active {
+            background: linear-gradient(135deg, #6C63FF 0%, #4A40E5 100%);
             color: white;
             border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.2);
         }
 
-        /* Courses Grid */
+        .sort-options {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .sort-select {
+            padding: 10px 18px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            background: white;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .sort-select:focus {
+            outline: none;
+            border-color: #6C63FF;
+            box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+        }
+
+        /* ====== COURSES GRID ====== */
+        .courses-grid-section {
+            padding: 60px 40px 80px;
+            background: #f8f9fa;
+        }
+
+        .results-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .total-courses {
+            font-size: 16px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .total-courses span {
+            font-weight: 700;
+            color: #333;
+        }
+
         .courses-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
-            padding: 0 5% 80px;
+            margin-bottom: 40px;
         }
 
+        /* ====== IMPROVED COURSE CARD ====== */
         .course-card {
-            background-color: var(--card-bg);
-            border-radius: 16px;
+            background: white;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 5px 15px var(--shadow-color);
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            position: relative;
         }
 
         .course-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
         }
 
         .course-image {
@@ -347,198 +603,321 @@
             overflow: hidden;
         }
 
+        .course-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.1) 100%);
+        }
+
         .course-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.8s ease;
         }
 
         .course-card:hover .course-image img {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
         .course-duration {
             position: absolute;
             bottom: 15px;
             right: 15px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 5px 10px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 12px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .course-duration i {
+            font-size: 11px;
         }
 
         .course-tags {
+            padding: 20px 25px 0;
             display: flex;
             gap: 10px;
-            padding: 15px;
+            flex-wrap: wrap;
         }
 
         .tag {
-            font-size: 0.8rem;
-            padding: 5px 10px;
+            padding: 6px 16px;
             border-radius: 20px;
-            font-weight: 500;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
-        .coding-tag { background-color: rgba(59, 130, 246, 0.1); color: var(--primary-color); }
-        .data-tag { background-color: rgba(16, 185, 129, 0.1); color: var(--success-color); }
-        .design-tag { background-color: rgba(236, 72, 153, 0.1); color: var(--accent-color); }
-        .marketing-tag { background-color: rgba(245, 158, 11, 0.1); color: var(--warning-color); }
-        .beginner-tag { background-color: rgba(16, 185, 129, 0.1); color: var(--success-color); }
-        .intermediate-tag { background-color: rgba(59, 130, 246, 0.1); color: var(--primary-color); }
-        .advanced-tag { background-color: rgba(239, 68, 68, 0.1); color: var(--error-color); }
+        .coding-tag { 
+            background: rgba(0, 102, 204, 0.1); 
+            color: #0066cc; 
+            border: 1px solid rgba(0, 102, 204, 0.2);
+        }
+        .design-tag { 
+            background: rgba(108, 99, 255, 0.1); 
+            color: #6C63FF; 
+            border: 1px solid rgba(108, 99, 255, 0.2);
+        }
+        .data-tag { 
+            background: rgba(0, 204, 102, 0.1); 
+            color: #00cc66; 
+            border: 1px solid rgba(0, 204, 102, 0.2);
+        }
+        .marketing-tag { 
+            background: rgba(255, 102, 0, 0.1); 
+            color: #ff6600; 
+            border: 1px solid rgba(255, 102, 0, 0.2);
+        }
+        .security-tag { 
+            background: rgba(204, 0, 0, 0.1); 
+            color: #cc0000; 
+            border: 1px solid rgba(204, 0, 0, 0.2);
+        }
+        .cloud-tag { 
+            background: rgba(0, 102, 255, 0.1); 
+            color: #0066ff; 
+            border: 1px solid rgba(0, 102, 255, 0.2);
+        }
+        .ai-tag { 
+            background: rgba(153, 0, 204, 0.1); 
+            color: #9900cc; 
+            border: 1px solid rgba(153, 0, 204, 0.2);
+        }
 
         .course-content {
-            padding: 0 15px 20px;
+            padding: 20px 25px 25px;
         }
 
         .course-title {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #333;
+            line-height: 1.4;
+            min-height: 56px;
         }
 
         .course-description {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-            min-height: 60px;
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            min-height: 72px;
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
         }
 
         .course-rating {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-            color: var(--text-light);
+            gap: 8px;
+            color: #ff9900;
+            font-size: 14px;
         }
 
         .course-rating span {
-            margin-right: 5px;
-            font-weight: 600;
-            color: var(--text-color);
-        }
-
-        .course-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .course-price {
             font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--primary-color);
+            color: #333;
+            font-size: 16px;
         }
 
-        .join-now-btn {
-            padding: 8px 20px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        .course-rating span1 {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .enroll-btn {
+            padding: 10px 22px;
+            background: linear-gradient(135deg, #6C63FF 0%, #4A40E5 100%);
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 10px;
             font-weight: 600;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s ease;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
         }
 
-        .join-now-btn:hover {
+        .enroll-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+            box-shadow: 0 6px 20px rgba(108, 99, 255, 0.3);
         }
 
-        /* Pagination */
+        /* ====== PAGINATION ====== */
         .pagination {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 15px;
-            margin: 40px 0;
+            gap: 12px;
+            margin-top: 50px;
         }
 
         .arrow-prev, .arrow-next {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
-            background: var(--card-bg);
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
+            background: white;
+            border: 2px solid #6C63FF;
+            color: #6C63FF;
             font-size: 16px;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .arrow-prev:hover, .arrow-next:hover {
-            background: var(--primary-color);
+            background: linear-gradient(135deg, #6C63FF 0%, #4A40E5 100%);
             color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.2);
         }
 
         .page-number {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
-            background: var(--card-bg);
-            border: 2px solid var(--border-color);
-            color: var(--text-color);
+            background: white;
+            border: 2px solid #e0e0e0;
+            color: #333;
             font-weight: 600;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
         }
 
         .page-number.active, .page-number:hover {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, #6C63FF 0%, #4A40E5 100%);
             color: white;
             border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.2);
         }
 
-        /* Footer */
+        /* ====== CTA SECTION ====== */
+        .courses-cta {
+            padding: 100px 40px;
+            background: linear-gradient(135deg, #6C63FF 0%, #4A40E5 100%);
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .courses-cta::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -150px;
+            right: -100px;
+        }
+
+        .courses-cta::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -50px;
+        }
+
+        .courses-cta .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .courses-cta h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .courses-cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: white;
+            color: #6C63FF;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ====== FOOTER (Same as index) ====== */
         .footer {
-            background-color: var(--card-bg);
-            padding: 80px 5% 30px;
-            border-top: 1px solid var(--border-color);
+            background: #333;
+            color: white;
+            padding: 60px 40px 30px;
         }
 
         .footer-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 50px;
-            margin-bottom: 50px;
-        }
-
-        .footer-contact {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .logo-image-footer {
-            height: 50px;
-            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
         .footer-contact p {
             display: flex;
             align-items: center;
+            gap: 10px;
             margin-bottom: 15px;
-            color: var(--text-light);
+            color: #ccc;
         }
 
-        .footer-contact i {
-            margin-right: 10px;
-            color: var(--primary-color);
-            width: 20px;
-            text-align: center;
-        }
-
-        .footer-links {
-            flex: 1;
-            min-width: 150px;
+        .logo-image-footer {
+            height: 40px;
+            width: auto;
+            margin-bottom: 20px;
         }
 
         .footer-links h4 {
-            font-size: 1.2rem;
             margin-bottom: 20px;
-            color: var(--text-color);
+            color: white;
+            font-size: 18px;
         }
 
         .footer-links ul {
@@ -546,515 +925,478 @@
         }
 
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .footer-links a {
-            color: var(--text-light);
+            color: #ccc;
             transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
-            color: var(--primary-color);
+            color: white;
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-light);
+            border-top: 1px solid #444;
+            color: #ccc;
         }
 
         .footer-bottom span {
-            color: var(--primary-color);
+            color: #6C63FF;
             font-weight: 600;
         }
 
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .nav-links {
-                position: fixed;
-                top: 90px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 90px);
-                background-color: var(--card-bg);
-                flex-direction: column;
-                justify-content: flex-start;
-                padding-top: 40px;
-                gap: 30px;
-                transition: left 0.3s ease;
-                z-index: 999;
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .hamburger {
-                display: block;
-            }
-            
-            .courses-hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .courses-hero p {
-                font-size: 1.1rem;
-            }
+        /* ====== DARK MODE (Fixed Explore Our text) ====== */
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
         }
 
-        @media (max-width: 768px) {
-            .courses-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
-            
-            .courses-categories ul {
-                gap: 10px;
-            }
-            
-            .courses-categories a {
-                padding: 6px 15px;
-                font-size: 0.9rem;
+        body.dark-mode .navbar {
+            background-color: #1e1e1e;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .nav-links a {
+            color: #ffffff;
+        }
+
+        body.dark-mode .nav-links a:hover {
+            color: #6C63FF;
+        }
+
+        body.dark-mode .btn-login {
+            color: #6C63FF;
+            border-color: #6C63FF;
+        }
+
+        body.dark-mode .btn-login:hover {
+            background-color: #6C63FF;
+            color: white;
+        }
+
+        body.dark-mode .theme-toggle {
+            color: #ffffff;
+        }
+
+        body.dark-mode .theme-toggle:hover {
+            background: #3d3d3d;
+        }
+
+        body.dark-mode .hamburger .bar {
+            background: #ffffff;
+        }
+
+        body.dark-mode .side-menu {
+            background-color: #2d2d2d;
+        }
+
+        body.dark-mode .cancel-icon {
+            color: #cccccc;
+        }
+
+        body.dark-mode .cancel-icon:hover {
+            color: #ffffff;
+        }
+
+        body.dark-mode .menu-separator {
+            border-color: #3d3d3d;
+        }
+
+        body.dark-mode .theme-switcher p {
+            color: #ffffff;
+        }
+
+        body.dark-mode .theme-icon {
+            color: #ffffff;
+        }
+
+        body.dark-mode .theme-icon:hover {
+            background: #3d3d3d;
+        }
+
+        body.dark-mode .mobile-nav-links a {
+            color: #ffffff;
+        }
+
+        body.dark-mode .courses-hero {
+            background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+        }
+
+        body.dark-mode .courses-hero h1 {
+            color: #ffffff !important;
+        }
+
+        body.dark-mode .courses-hero h1 span {
+            background: linear-gradient(135deg, #6C63FF 0%, #4A40E5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        body.dark-mode .courses-hero p {
+            color: #cccccc;
+        }
+
+        body.dark-mode .search-input {
+            background: #2d2d2d;
+            border-color: #3d3d3d;
+            color: #ffffff;
+        }
+
+        body.dark-mode .search-results {
+            background: #2d2d2d;
+            color: #ffffff;
+            border-color: #3d3d3d;
+        }
+
+        body.dark-mode .search-result-item:hover {
+            background: #3d3d3d;
+        }
+
+        body.dark-mode .filters-section {
+            background: #1e1e1e;
+            border-color: #3d3d3d;
+        }
+
+        body.dark-mode .category-btn {
+            background: #2d2d2d;
+            color: #cccccc;
+        }
+
+        body.dark-mode .sort-select {
+            background: #2d2d2d;
+            border-color: #3d3d3d;
+            color: #ffffff;
+        }
+
+        body.dark-mode .courses-grid-section {
+            background: #121212;
+        }
+
+        body.dark-mode .total-courses {
+            color: #cccccc;
+        }
+
+        body.dark-mode .total-courses span {
+            color: #ffffff;
+        }
+
+        body.dark-mode .course-card {
+            background: #2d2d2d;
+        }
+
+        body.dark-mode .course-title {
+            color: #ffffff;
+        }
+
+        body.dark-mode .course-description {
+            color: #cccccc;
+        }
+
+        body.dark-mode .course-rating span {
+            color: #ffffff;
+        }
+
+        body.dark-mode .course-meta {
+            border-color: #3d3d3d;
+        }
+
+        body.dark-mode .page-number {
+            background: #2d2d2d;
+            border-color: #3d3d3d;
+            color: #ffffff;
+        }
+
+        body.dark-mode .footer {
+            background-color: #1e1e1e;
+        }
+
+        body.dark-mode .footer-links a {
+            color: #cccccc;
+        }
+
+        body.dark-mode .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        /* ====== RESPONSIVE DESIGN ====== */
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
             }
             
             .auth-buttons {
                 display: none;
             }
-            
-            .mobile-auth {
+
+            .hamburger {
                 display: flex;
-                flex-direction: column;
-                gap: 15px;
-                margin-top: 30px;
-                width: 100%;
-                padding: 0 20px;
             }
-            
-            .mobile-auth .btn {
-                width: 100%;
-                text-align: center;
+
+            .courses-hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .courses-grid {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            }
+
+            .filters-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .courses-cta h2 {
+                font-size: 2.2rem;
             }
         }
 
-        @media (max-width: 576px) {
+        @media (max-width: 768px) {
             .navbar {
-                padding: 15px;
+                padding: 15px 20px;
             }
-            
+
+            .courses-hero {
+                padding: 80px 20px 40px;
+            }
+
+            .courses-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .courses-hero p {
+                font-size: 1.1rem;
+            }
+
+            .courses-grid-section {
+                padding: 40px 20px 60px;
+            }
+
+            .courses-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .filters-section {
+                padding: 30px 20px;
+            }
+
+            .courses-cta {
+                padding: 60px 20px;
+            }
+
+            .courses-cta h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
             .courses-hero h1 {
                 font-size: 1.8rem;
             }
-            
-            .courses-hero p {
-                font-size: 1rem;
+
+            .category-btn {
+                padding: 8px 16px;
+                font-size: 13px;
             }
-            
-            .footer-container {
-                flex-direction: column;
-                gap: 30px;
+
+            .course-card {
+                margin: 0 auto;
+                max-width: 100%;
             }
-            
-            .theme-switch-wrapper {
-                margin-left: 10px;
+
+            .course-tags {
+                padding: 15px 20px 0;
             }
-            
-            .theme-switch {
-                width: 50px;
-                height: 28px;
+
+            .course-content {
+                padding: 15px 20px 20px;
             }
-            
-            .slider:before {
-                height: 20px;
-                width: 20px;
+
+            .course-title {
+                font-size: 18px;
+                min-height: auto;
             }
-            
-            input:checked + .slider:before {
-                transform: translateX(22px);
+
+            .course-description {
+                font-size: 14px;
+                min-height: auto;
             }
         }
-        /* Hide mobile-auth by default (desktop) */
-.mobile-auth {
-    display: none;
-}
-
-/* Responsive Styles */
-@media (max-width: 992px) {
-    .nav-links {
-        position: fixed;
-        top: 90px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 90px);
-        background-color: var(--card-bg);
-        flex-direction: column;
-        justify-content: flex-start;
-        padding-top: 40px;
-        gap: 30px;
-        transition: left 0.3s ease;
-        z-index: 999;
-    }
-    
-    .nav-links.active {
-        left: 0;
-    }
-    
-    .hamburger {
-        display: block;
-    }
-    
-    .blog-hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .blog-container {
-        flex-direction: column;
-    }
-    
-    .featured-image {
-        height: 300px;
-    }
-    
-    .featured-content h2 {
-        font-size: 1.7rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .posts-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .auth-buttons {
-        display: none; /* hide desktop buttons */
-    }
-    
-    .mobile-auth {
-        display: flex; /* show mobile buttons */
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 30px;
-        width: 100%;
-        padding: 0 20px;
-    }
-    
-    .mobile-auth .btn {
-        width: 100%;
-        text-align: center;
-    }
-    
-    .blog-hero h1 {
-        font-size: 2.2rem;
-    }
-    
-    .blog-hero p {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .navbar {
-        padding: 15px;
-    }
-    
-    .blog-hero {
-        padding: 80px 5% 60px;
-    }
-    
-    .blog-hero h1 {
-        font-size: 2rem;
-    }
-    
-    .blog-hero p {
-        font-size: 1rem;
-    }
-    
-    .featured-image {
-        height: 250px;
-    }
-    
-    .featured-content {
-        padding: 20px;
-    }
-    
-    .featured-content h2 {
-        font-size: 1.5rem;
-    }
-    
-    .footer-container {
-        flex-direction: column;
-        gap: 30px;
-    }
-    
-    .theme-switch-wrapper {
-        margin-left: 10px;
-    }
-    
-    .theme-switch {
-        width: 50px;
-        height: 28px;
-    }
-    
-    .slider:before {
-        height: 20px;
-        width: 20px;
-    }
-    
-    input:checked + .slider:before {
-        transform: translateX(22px);
-    }
-}
-
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="logo">
-            <a href="#">
-                <img src="images/MDTH LOGO.jpg" alt="MDTH Logo" class="logo-image">
+            <a href="/index.html">
+                <img src="images/MDTH_LOGO-removebg-preview.png" alt="MDTH Logo">
             </a>
         </div>
         
-        <ul class="nav-links">
-            <li><a href="/index">Home</a></li>
+        <ul class="nav-links" id="mainNav">
+            <li><a href="/index.html">Home</a></li>
             <li><a href="/courses" class="active">Courses</a></li>
             <li><a href="/about">About Us</a></li>
-            <li><a href="/contact us">Contact</a></li>
+            <li><a href="/contact-us">Contact</a></li>
             <li><a href="/blog">Blog</a></li>
-            
-            <div class="mobile-auth">
-                <a href="/signup" class="btn btn-signup">Sign Up</a>
-                <a href="/login" class="btn btn-login">Login</a>
-            </div>
         </ul>
         
         <div class="auth-buttons">
+            <button id="desktopThemeToggle" class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
             <a href="/signup" class="btn btn-signup">Sign Up</a>
             <a href="/login" class="btn btn-login">Login</a>
-            
-            <div class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox" />
-                    <div class="slider">
-                        <i class="fas fa-sun"></i>
-                        <i class="fas fa-moon"></i>
-                    </div>
-                </label>
-            </div>
         </div>
         
-        <button class="hamburger">
-            <i class="fas fa-bars"></i>
-        </button>
+        <div class="hamburger" id="hamburgerBtn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Side Menu -->
+    <div class="side-menu" id="sideMenu">
+        <div class="side-menu-header">
+            <img src="images/MDTH_LOGO-removebg-preview.png" alt="Logo" class="side-menu-logo">
+            <div class="cancel-icon" id="closeMenuBtn">
+                <span>&times;</span>
+            </div>
+        </div>
+        <hr class="menu-separator">
+        <div class="theme-switcher">
+            <p>Switch Theme</p>
+            <button id="themeToggle" class="theme-icon">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/courses" class="active">Courses</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact-us">Contact</a></li>
+            <li><a href="/blog">Blog</a></li>
+        </ul>
+        <div class="mobile-auth-buttons">
+            <a href="/signup" class="btn btn-signup">Sign Up</a>
+            <a href="/login" class="btn btn-login">Login</a>
+        </div>
+        <hr class="menu-separator">
+    </div>
+
+    <!-- Courses Hero Section -->
     <section class="courses-hero">
         <div class="container">
-            <h1>Explore Our Tech Courses</h1>
-            <p>Discover industry-leading courses designed to launch your tech career. Learn in-demand skills from experts and advance your career.</p>
+            <h1>Explore Our <span>Tech Courses</span></h1>
+            <p>Master in-demand skills with our industry-leading courses. Learn from experts and advance your career in the digital world.</p>
             
-            <div class="courses-search-container">
-                <input type="text" placeholder="Search for courses..." class="search-input">
-                <i class="fas fa-search"></i>
+            <!-- Search System -->
+            <div class="search-container">
+                <div class="search-input-wrapper">
+                    <input type="text" 
+                           class="search-input" 
+                           id="courseSearch"
+                           placeholder="Search courses by name, category, or skill..."
+                           autocomplete="off">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <div class="search-results" id="searchResults">
+                    <!-- Search results will be dynamically inserted here -->
+                </div>
             </div>
-            
-            <nav class="courses-categories">
-                <ul>
-                    <li><a href="/courses" class="active">All</a></li>
-                    <li><a href="/web">Web Development</a></li>
-                    <li><a href="/data service">Data Science</a></li>
-                    <li><a href="/UIUX design">UI/UX Design</a></li>
-                    <li><a href="/Digital Marketing">Digital Marketing</a></li>
-                    <li><a href="/Cyber-security">Cyber Security</a></li>
-                </ul>
-            </nav>
         </div>
     </section>
 
-    <!-- Courses Grid -->
-    <div class="container">
-        <div class="courses-grid">
-            <!-- Course 1 -->
-            <div class="course-card">
-                <div class="course-image">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Web Development">
-                    <span class="course-duration"><i class="far fa-clock"></i> 3 Months</span>
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="categories-filter">
+                    <button class="category-btn active" data-category="all">All Courses</button>
+                    <button class="category-btn" data-category="web">Web Development</button>
+                    <button class="category-btn" data-category="data">Data Science</button>
+                    <button class="category-btn" data-category="design">UI/UX Design</button>
+                    <button class="category-btn" data-category="marketing">Digital Marketing</button>
+                    <button class="category-btn" data-category="security">Cyber Security</button>
+                    <button class="category-btn" data-category="cloud">Cloud Computing</button>
                 </div>
-                <div class="course-tags">
-                    <span class="tag coding-tag">
-                        <i class="fas fa-code"></i> Coding
-                    </span>                    
-                    <span class="tag beginner-tag">Beginner</span>
-                </div>
-                <div class="course-content">
-                    <h3 class="course-title">Web Development Bootcamp</h3>
-                    <p class="course-description">
-                        Master HTML, CSS, JavaScript and modern frameworks to build responsive websites.
-                    </p>
-                    <div class="course-rating"><span>4.7</span>⭐⭐⭐⭐⭐ <span>(142)</span></div> 
-                    <div class="course-footer">
-                        <span class="course-price">₦35,000</span>
-                        <button class="join-now-btn">Join Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course 2 -->
-            <div class="course-card">
-                <div class="course-image">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Data Science">
-                    <span class="course-duration"><i class="far fa-clock"></i> 4 Months</span>
-                </div>
-                <div class="course-tags">
-                    <span class="tag data-tag">
-                        <i class="fas fa-database"></i> Data
-                    </span>                    
-                    <span class="tag intermediate-tag">Intermediate</span>
-                </div>
-                <div class="course-content">
-                    <h3 class="course-title">Data Science Mastery</h3>
-                    <p class="course-description">
-                        Learn Python, SQL, and machine learning to analyze and visualize complex data.
-                    </p>
-                    <div class="course-rating"><span>4.9</span>⭐⭐⭐⭐⭐ <span>(76)</span></div> 
-                    <div class="course-footer">
-                        <span class="course-price">₦60,000</span>
-                        <button class="join-now-btn">Join Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course 3 -->
-            <div class="course-card">
-                <div class="course-image">
-                    <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80" alt="UI/UX Design">
-                    <span class="course-duration"><i class="far fa-clock"></i> 2 Months</span>
-                </div>
-                <div class="course-tags">
-                    <span class="tag design-tag">
-                        <i class="fas fa-paint-brush"></i> Design
-                    </span>                    
-                    <span class="tag beginner-tag">Beginner</span>
-                </div>
-                <div class="course-content">
-                    <h3 class="course-title">UI/UX Design Pro</h3>
-                    <p class="course-description">
-                        Create stunning interfaces with Figma and Adobe XD. Learn design principles.
-                    </p>
-                    <div class="course-rating"><span>4.8</span>⭐⭐⭐⭐⭐ <span>(98)</span></div> 
-                    <div class="course-footer">
-                        <span class="course-price">₦45,000</span>
-                        <button class="join-now-btn">Join Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course 4 -->
-            <div class="course-card">
-                <div class="course-image">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" alt="Digital Marketing">
-                    <span class="course-duration"><i class="far fa-clock"></i> 6 Weeks</span>
-                </div>
-                <div class="course-tags">
-                    <span class="tag marketing-tag">
-                        <i class="fas fa-envelope"></i> Marketing
-                    </span>                    
-                    <span class="tag beginner-tag">Beginner</span>
-                </div>
-                <div class="course-content">
-                    <h3 class="course-title">Digital Marketing Strategy</h3>
-                    <p class="course-description">
-                        Master SEO, social media, email marketing and analytics to grow businesses.
-                    </p>
-                    <div class="course-rating"><span>4.6</span>⭐⭐⭐⭐⭐ <span>(88)</span></div> 
-                    <div class="course-footer">
-                        <span class="course-price">₦25,000</span>
-                        <button class="join-now-btn">Join Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course 5 -->
-            <div class="course-card">
-                <div class="course-image">
-                    <img src="https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Cyber Security">
-                    <span class="course-duration"><i class="far fa-clock"></i> 3 Months</span>
-                </div>
-                <div class="course-tags">
-                    <span class="tag coding-tag">
-                        <i class="fas fa-shield-alt"></i> Security
-                    </span>                    
-                    <span class="tag advanced-tag">Advanced</span>
-                </div>
-                <div class="course-content">
-                    <h3 class="course-title">Cyber Security Fundamentals</h3>
-                    <p class="course-description">
-                        Protect systems from threats and vulnerabilities. Learn ethical hacking techniques.
-                    </p>
-                    <div class="course-rating"><span>4.7</span>⭐⭐⭐⭐⭐ <span>(64)</span></div> 
-                    <div class="course-footer">
-                        <span class="course-price">₦55,000</span>
-                        <button class="join-now-btn">Join Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course 6 -->
-            <div class="course-card">
-                <div class="course-image">
-                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Cloud Computing">
-                    <span class="course-duration"><i class="far fa-clock"></i> 10 Weeks</span>
-                </div>
-                <div class="course-tags">
-                    <span class="tag coding-tag">
-                        <i class="fas fa-cloud"></i> Cloud
-                    </span>                    
-                    <span class="tag intermediate-tag">Intermediate</span>
-                </div>
-                <div class="course-content">
-                    <h3 class="course-title">AWS Cloud Practitioner</h3>
-                    <p class="course-description">
-                        Master Amazon Web Services infrastructure and deployment strategies.
-                    </p>
-                    <div class="course-rating"><span>4.8</span>⭐⭐⭐⭐⭐ <span>(53)</span></div> 
-                    <div class="course-footer">
-                        <span class="course-price">₦48,000</span>
-                        <button class="join-now-btn">Join Now</button>
-                    </div>
+                
+                <div class="sort-options">
+                    <label for="sortBy">Sort by:</label>
+                    <select id="sortBy" class="sort-select">
+                        <option value="popular">Most Popular</option>
+                        <option value="newest">Newest</option>
+                        <option value="rating">Highest Rated</option>
+                        <option value="duration">Course Duration</option>
+                    </select>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Pagination -->
-        <div class="pagination">
-            <button class="arrow-prev"><i class="fas fa-arrow-left"></i></button>
-            <button class="page-number active">01</button>
-            <button class="page-number">02</button>
-            <button class="page-number">03</button>
-            <button class="arrow-next"><i class="fas fa-arrow-right"></i></button>
+    <!-- Courses Grid Section -->
+    <section class="courses-grid-section">
+        <div class="container">
+            <div class="results-info">
+                <div class="total-courses">
+                    Showing <span id="courseCount">12</span> courses
+                </div>
+            </div>
+            
+            <div class="courses-grid" id="coursesGrid">
+                <!-- Courses will be dynamically loaded here -->
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="arrow-prev" id="prevPage">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <button class="page-number active">1</button>
+                <button class="page-number">2</button>
+                <button class="page-number">3</button>
+                <button class="arrow-next" id="nextPage">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="courses-cta">
+        <div class="container">
+            <h2>Ready to Start Your Tech Journey?</h2>
+            <p>Join thousands of students who have transformed their careers with MDTH courses. Start learning today!</p>
+            <a href="/signup" class="cta-btn">Get Started Now</a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-container">
                 <div class="footer-contact">
-                    <img src="https://via.placeholder.com/150x50/2563EB/FFFFFF?text=MDTH" alt="MDTH Logo" class="logo-image-footer">
-                    <p><i class="far fa-envelope"></i> mdthdig@gmail.com</p>
-                    <p><i class="fas fa-location-dot"></i> Lagos, Nigeria</p>
-                    <p><i class="fas fa-phone"></i> (+234) 816 0330 156</p>
+                    <img src="images/MDTH_LOGO-removebg-preview.png" alt="MDTH Logo" class="logo-image-footer">
+                    <p><i class="fa-regular fa-envelope"></i> mdthdig@gmail.com</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Lagos, Nigeria</p>
+                    <p><i class="fa-solid fa-phone"></i> (+234) 816 0330 156</p>
                 </div>
                 <div class="footer-links">
                     <h4>PAGES</h4>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Project</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/courses">Courses</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/contact-us">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -1062,7 +1404,7 @@
                     <ul>
                         <li><a href="#">Twitter</a></li>
                         <li><a href="#">LinkedIn</a></li>
-                        <li><a href="#">Dribble</a></li>
+                        <li><a href="#">Instagram</a></li>
                         <li><a href="#">Facebook</a></li>
                     </ul>
                 </div>
@@ -1070,8 +1412,8 @@
                     <h4>UTILITIES</h4>
                     <ul>
                         <li><a href="#">Style Guide</a></li>
-                        <li><a href="#">Change log</a></li>
                         <li><a href="#">Licenses</a></li>
+                        <li><a href="#">Changelog</a></li>
                     </ul>
                 </div>
             </div>
@@ -1082,85 +1424,462 @@
     </footer>
 
     <script>
-        // Simple JavaScript for interactive elements
-        document.addEventListener('DOMContentLoaded', function() {
-            // Category filter
-            const categoryLinks = document.querySelectorAll('.courses-categories a');
-            categoryLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    categoryLinks.forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
-            
-            // Pagination
-            const pageNumbers = document.querySelectorAll('.page-number');
-            pageNumbers.forEach(number => {
-                number.addEventListener('click', function() {
-                    pageNumbers.forEach(n => n.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
-            
-            // Join Now buttons
-            const joinButtons = document.querySelectorAll('.join-now-btn');
-            joinButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    alert('Course added to your cart!');
-                });
-            });
-            
-            // Dark mode toggle
-            const toggleSwitch = document.querySelector('#checkbox');
-            
-            function switchTheme(e) {
-                if (e.target.checked) {
-                    document.documentElement.classList.add('dark-mode');
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    document.documentElement.classList.remove('dark-mode');
-                    localStorage.setItem('theme', 'light');
-                }    
+        // Course Data with individual HTML pages
+        const courses = [
+            {
+                id: 1,
+                title: "Web Development Bootcamp",
+                description: "Master HTML, CSS, JavaScript and modern frameworks to build responsive websites and web applications from scratch.",
+                category: "web",
+                duration: "3 Months",
+                rating: 4.7,
+                reviews: 142,
+                tags: ["coding", "beginner"],
+                image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1170&q=80",
+                link: "/web-development-course.html"
+            },
+            {
+                id: 2,
+                title: "Data Science Mastery",
+                description: "Learn Python, SQL, and machine learning to analyze and visualize complex data for business insights and decision making.",
+                category: "data",
+                duration: "4 Months",
+                rating: 4.9,
+                reviews: 76,
+                tags: ["data", "intermediate"],
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1170&q=80",
+                link: "/data-science-course.html"
+            },
+            {
+                id: 3,
+                title: "UI/UX Design Pro",
+                description: "Create stunning interfaces with Figma and Adobe XD. Learn user-centered design principles and prototyping techniques.",
+                category: "design",
+                duration: "2 Months",
+                rating: 4.8,
+                reviews: 98,
+                tags: ["design", "beginner"],
+                image: "https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=1080&q=80",
+                link: "/uiux-design-course.html"
+            },
+            {
+                id: 4,
+                title: "Digital Marketing Strategy",
+                description: "Master SEO, social media marketing, email campaigns, and analytics to grow businesses online effectively.",
+                category: "marketing",
+                duration: "6 Weeks",
+                rating: 4.6,
+                reviews: 88,
+                tags: ["marketing", "beginner"],
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1115&q=80",
+                link: "/digital-marketing-course.html"
+            },
+            {
+                id: 5,
+                title: "Cyber Security Fundamentals",
+                description: "Protect systems from threats and vulnerabilities. Learn ethical hacking and security best practices for modern networks.",
+                category: "security",
+                duration: "3 Months",
+                rating: 4.7,
+                reviews: 64,
+                tags: ["security", "advanced"],
+                image: "https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1170&q=80",
+                link: "/cybersecurity-course.html"
+            },
+            {
+                id: 6,
+                title: "AWS Cloud Practitioner",
+                description: "Master Amazon Web Services infrastructure, deployment strategies, and cloud computing concepts for modern applications.",
+                category: "cloud",
+                duration: "10 Weeks",
+                rating: 4.8,
+                reviews: 53,
+                tags: ["cloud", "intermediate"],
+                image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1170&q=80",
+                link: "/aws-cloud-course.html"
+            },
+            {
+                id: 7,
+                title: "Full Stack JavaScript",
+                description: "Learn Node.js, React, and MongoDB to build complete web applications from frontend to backend with modern JavaScript.",
+                category: "web",
+                duration: "4 Months",
+                rating: 4.9,
+                reviews: 92,
+                tags: ["coding", "intermediate"],
+                image: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&w=1170&q=80",
+                link: "/fullstack-javascript-course.html"
+            },
+            {
+                id: 8,
+                title: "Python Programming",
+                description: "Learn Python from basics to advanced concepts including data analysis, automation, and scientific computing.",
+                category: "data",
+                duration: "3 Months",
+                rating: 4.7,
+                reviews: 105,
+                tags: ["coding", "beginner"],
+                image: "https://images.unsplash.com/photo-1526379879527-8559ecfcaec4?auto=format&fit=crop&w=1170&q=80",
+                link: "/python-course.html"
+            },
+            {
+                id: 9,
+                title: "Mobile App Development",
+                description: "Build native iOS and Android apps using React Native and modern mobile development tools and frameworks.",
+                category: "web",
+                duration: "3 Months",
+                rating: 4.8,
+                reviews: 71,
+                tags: ["coding", "intermediate"],
+                image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1170&q=80",
+                link: "/mobile-app-course.html"
+            },
+            {
+                id: 10,
+                title: "Machine Learning",
+                description: "Introduction to AI and machine learning algorithms with practical implementation projects and real-world applications.",
+                category: "data",
+                duration: "5 Months",
+                rating: 4.9,
+                reviews: 58,
+                tags: ["data", "advanced"],
+                image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1170&q=80",
+                link: "/machine-learning-course.html"
+            },
+            {
+                id: 11,
+                title: "Graphic Design Mastery",
+                description: "Create stunning visuals and designs using Photoshop, Illustrator, and professional design principles and techniques.",
+                category: "design",
+                duration: "2 Months",
+                rating: 4.7,
+                reviews: 84,
+                tags: ["design", "beginner"],
+                image: "https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=1170&q=80",
+                link: "/graphic-design-course.html"
+            },
+            {
+                id: 12,
+                title: "Social Media Marketing",
+                description: "Learn to create effective social media campaigns and grow brand presence across all major social platforms.",
+                category: "marketing",
+                duration: "8 Weeks",
+                rating: 4.5,
+                reviews: 67,
+                tags: ["marketing", "beginner"],
+                image: "https://images.unsplash.com/photo-1611605698335-8b1569810432?auto=format&fit=crop&w=1170&q=80",
+                link: "/social-media-course.html"
             }
+        ];
+
+        // DOM Elements
+        const coursesGrid = document.getElementById('coursesGrid');
+        const courseCount = document.getElementById('courseCount');
+        const searchInput = document.getElementById('courseSearch');
+        const searchResults = document.getElementById('searchResults');
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const sortSelect = document.getElementById('sortBy');
+
+        // Initialize
+        let filteredCourses = [...courses];
+        let currentCategory = 'all';
+        let currentSort = 'popular';
+
+        // Render Courses
+        function renderCourses(coursesToRender) {
+            coursesGrid.innerHTML = '';
+            courseCount.textContent = coursesToRender.length;
             
-            toggleSwitch.addEventListener('change', switchTheme, false);
-            
-            // Check for saved theme preference
-            const currentTheme = localStorage.getItem('theme');
-            if (currentTheme) {
-                document.documentElement.classList.toggle('dark-mode', currentTheme === 'dark');
-                toggleSwitch.checked = currentTheme === 'dark';
-            }
-            
-            // Mobile menu toggle
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
-            
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
+            coursesToRender.forEach(course => {
+                const tagClass = getTagClass(course.tags[0]);
+                const courseCard = document.createElement('a');
+                courseCard.href = course.link;
+                courseCard.className = 'course-card';
+                courseCard.setAttribute('data-category', course.category);
                 
-                // Toggle hamburger icon
-                const icon = hamburger.querySelector('i');
-                if (navLinks.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
+                courseCard.innerHTML = `
+                    <div class="course-image">
+                        <img src="${course.image}" alt="${course.title}">
+                        <span class="course-duration"><i class="far fa-clock"></i> ${course.duration}</span>
+                    </div>
+                    <div class="course-tags">
+                        <span class="tag ${tagClass}">
+                            ${getTagIcon(course.tags[0])} ${course.tags[0].charAt(0).toUpperCase() + course.tags[0].slice(1)}
+                        </span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">${course.title}</h3>
+                        <p class="course-description">${course.description}</p>
+                        <div class="course-meta">
+                            <div class="course-rating">
+                                <span>${course.rating}</span> ⭐⭐⭐⭐⭐ <span1>(${course.reviews})</span1>
+                            </div>
+                            <button class="enroll-btn" onclick="event.preventDefault(); enrollCourse(${course.id});">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                coursesGrid.appendChild(courseCard);
             });
+        }
+
+        // Search Functionality
+        function searchCourses(query) {
+            if (!query.trim()) {
+                searchResults.classList.remove('active');
+                return;
+            }
             
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!hamburger.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    const icon = hamburger.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
+            const results = courses.filter(course => 
+                course.title.toLowerCase().includes(query.toLowerCase()) ||
+                course.description.toLowerCase().includes(query.toLowerCase()) ||
+                course.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase())) ||
+                course.category.toLowerCase().includes(query.toLowerCase())
+            );
+            
+            displaySearchResults(results, query);
+        }
+
+        function displaySearchResults(results, query) {
+            searchResults.innerHTML = '';
+            
+            if (results.length === 0) {
+                searchResults.innerHTML = `
+                    <div class="no-results">
+                        <i class="fas fa-search"></i>
+                        <p>No courses found for "${query}"</p>
+                    </div>
+                `;
+            } else {
+                results.forEach(course => {
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'search-result-item';
+                    resultItem.addEventListener('click', () => {
+                        window.location.href = course.link;
+                    });
+                    
+                    resultItem.innerHTML = `
+                        <div class="search-result-icon">
+                            <i class="${getTagIcon(course.tags[0])}"></i>
+                        </div>
+                        <div class="search-result-content">
+                            <div class="search-result-title">${highlightMatch(course.title, query)}</div>
+                            <div class="search-result-category">${getCategoryName(course.category)}</div>
+                        </div>
+                    `;
+                    
+                    searchResults.appendChild(resultItem);
+                });
+            }
+            
+            searchResults.classList.add('active');
+        }
+
+        function highlightMatch(text, query) {
+            if (!query) return text;
+            const regex = new RegExp(`(${query})`, 'gi');
+            return text.replace(regex, '<mark>$1</mark>');
+        }
+
+        // Filter by Category
+        function filterByCategory(category) {
+            currentCategory = category;
+            if (category === 'all') {
+                filteredCourses = [...courses];
+            } else {
+                filteredCourses = courses.filter(course => course.category === category);
+            }
+            
+            sortCourses(currentSort);
+            categoryBtns.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.category === category);
+            });
+        }
+
+        // Sort Courses
+        function sortCourses(sortBy) {
+            currentSort = sortBy;
+            
+            switch(sortBy) {
+                case 'newest':
+                    filteredCourses.sort((a, b) => b.id - a.id);
+                    break;
+                case 'rating':
+                    filteredCourses.sort((a, b) => b.rating - a.rating);
+                    break;
+                case 'duration':
+                    filteredCourses.sort((a, b) => {
+                        const aDuration = parseDuration(a.duration);
+                        const bDuration = parseDuration(b.duration);
+                        return aDuration - bDuration;
+                    });
+                    break;
+                default: // popular
+                    filteredCourses.sort((a, b) => b.reviews - a.reviews);
+                    break;
+            }
+            
+            renderCourses(filteredCourses);
+        }
+
+        function parseDuration(duration) {
+            if (duration.includes('Month')) return parseInt(duration) * 4;
+            if (duration.includes('Week')) return parseInt(duration);
+            return parseInt(duration);
+        }
+
+        // Helper Functions
+        function getTagClass(tag) {
+            const tagClasses = {
+                'coding': 'coding-tag',
+                'design': 'design-tag',
+                'data': 'data-tag',
+                'marketing': 'marketing-tag',
+                'security': 'security-tag',
+                'cloud': 'cloud-tag'
+            };
+            return tagClasses[tag] || 'coding-tag';
+        }
+
+        function getTagIcon(tag) {
+            const icons = {
+                'coding': 'fas fa-code',
+                'design': 'fas fa-paint-brush',
+                'data': 'fas fa-database',
+                'marketing': 'fas fa-bullhorn',
+                'security': 'fas fa-shield-alt',
+                'cloud': 'fas fa-cloud'
+            };
+            return icons[tag] || 'fas fa-code';
+        }
+
+        function getCategoryName(category) {
+            const names = {
+                'web': 'Web Development',
+                'data': 'Data Science',
+                'design': 'UI/UX Design',
+                'marketing': 'Digital Marketing',
+                'security': 'Cyber Security',
+                'cloud': 'Cloud Computing'
+            };
+            return names[category] || category;
+        }
+
+        // Event Listeners
+        searchInput.addEventListener('input', (e) => {
+            searchCourses(e.target.value);
+        });
+
+        searchInput.addEventListener('focus', () => {
+            if (searchInput.value.trim()) {
+                searchResults.classList.add('active');
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                searchResults.classList.remove('active');
+            }
+        });
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterByCategory(btn.dataset.category);
             });
         });
+
+        sortSelect.addEventListener('change', (e) => {
+            sortCourses(e.target.value);
+        });
+
+        // Mobile Menu
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const sideMenu = document.getElementById('sideMenu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            sideMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            sideMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                sideMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Dark Mode Toggle
+        const desktopThemeToggle = document.getElementById('desktopThemeToggle');
+        const mobileThemeToggle = document.getElementById('themeToggle');
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDark);
+            updateThemeIcons();
+        }
+
+        function updateThemeIcons() {
+            const isDark = document.body.classList.contains('dark-mode');
+            document.querySelectorAll('.theme-toggle, .theme-icon').forEach(btn => {
+                const icon = btn.querySelector('i');
+                icon.classList.toggle('fa-moon', !isDark);
+                icon.classList.toggle('fa-sun', isDark);
+            });
+        }
+
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            updateThemeIcons();
+        }
+
+        desktopThemeToggle.addEventListener('click', toggleDarkMode);
+        mobileThemeToggle.addEventListener('click', toggleDarkMode);
+
+        // Enroll Course Function
+        window.enrollCourse = function(courseId) {
+            const course = courses.find(c => c.id === courseId);
+            window.location.href = `/enroll.html?course=${courseId}`;
+        };
+
+        // Pagination
+        document.getElementById('prevPage').addEventListener('click', () => {
+            const activePage = document.querySelector('.page-number.active');
+            const pageNumber = parseInt(activePage.textContent);
+            if (pageNumber > 1) {
+                document.querySelectorAll('.page-number').forEach((page, index) => {
+                    page.classList.toggle('active', index === pageNumber - 2);
+                });
+            }
+        });
+
+        document.getElementById('nextPage').addEventListener('click', () => {
+            const activePage = document.querySelector('.page-number.active');
+            const pageNumber = parseInt(activePage.textContent);
+            if (pageNumber < 3) {
+                document.querySelectorAll('.page-number').forEach((page, index) => {
+                    page.classList.toggle('active', index === pageNumber);
+                });
+            }
+        });
+
+        document.querySelectorAll('.page-number').forEach(page => {
+            page.addEventListener('click', function() {
+                document.querySelectorAll('.page-number').forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Initialize page
+        renderCourses(filteredCourses);
     </script>
 </body>
 </html>

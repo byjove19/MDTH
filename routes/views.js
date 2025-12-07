@@ -34,98 +34,93 @@ router.get('/dashboard', (req, res) => {
 router.get('/about', (req, res) => {
   res.sendFile(path.join(viewsPath, 'about.html'));
 });
-// Contact Us
-router.get('/contact us', (req, res) => {
-  res.sendFile(path.join(viewsPath, 'contact us .html'));
+
+// Contact Us - Fixed space in filename
+router.get('/contact', (req, res) => {
+  res.sendFile(path.join(viewsPath, 'contact.html')); // Changed from 'contact us .html'
 });
+
 // Blog
 router.get('/blog', (req, res) => {
-    res.sendFile(path.join(viewsPath, 'blog.html'));
+  res.sendFile(path.join(viewsPath, 'blog.html'));
 });
+
 // Courses
 router.get('/courses', (req, res) => {
-    res.sendFile(path.join(viewsPath, 'courses.html'));
+  res.sendFile(path.join(viewsPath, 'courses.html'));
 });
+
 // Web Development Course
 router.get('/web-development', (req, res) => {
-    res.sendFile(path.join(viewsPath, 'web-development.html'));
+  res.sendFile(path.join(viewsPath, 'web-development.html'));
 });
+
 // Data Science Course
 router.get('/data-science', (req, res) => {
-    res.sendFile
-(path.join(viewsPath, 'data-science.html'));
+  res.sendFile(path.join(viewsPath, 'data-science.html'));
 });
+
 // UI/UX Design Course
 router.get('/ui-ux', (req, res) => {
-    res.sendFile(path.join(viewsPath, 'ui-ux.html'));
+  res.sendFile(path.join(viewsPath, 'ui-ux.html'));
 });
+
 // Digital Marketing Course
 router.get('/digital-marketing', (req, res) => {
-    res.sendFile(path.join(viewsPath, 'digital-marketing.html'));
+  res.sendFile(path.join(viewsPath, 'digital-marketing.html'));
 });
 
-//Profile
+// Profile
 router.get('/profile', (req, res) => {
-    res.sendFile(path.join(viewsPath, 'profile.html')); 
+  res.sendFile(path.join(viewsPath, 'profile.html')); 
 });
-//project-management
+
+// Project Management
 router.get('/project-management', (req, res) => {   
-    res.sendFile(path.join(viewsPath, 'project-management.html')); 
-}
-);
-//cyber-security
+  res.sendFile(path.join(viewsPath, 'project-management.html')); 
+});
 
+// Cybersecurity
 router.get('/cybersecurity', (req, res) => {   
-    res.sendFile(path.join(viewsPath, 'cybersecurity.html')); 
-}
+  res.sendFile(path.join(viewsPath, 'cybersecurity.html')); 
+});
 
-);
-//cyber-security
-
+// Video Editing
 router.get('/video-editing', (req, res) => {   
-    res.sendFile(path.join(viewsPath, 'video-editing.html')); 
-}
+  res.sendFile(path.join(viewsPath, 'video-editing.html')); 
+});
 
-);
-//ai-ml
-router.get('/AI', (req, res) => {
-    res.sendFile(path.join(viewsPath, 'AI.html')); 
-} 
-);
-//data-analytics
+// AI/ML
+router.get('/ai', (req, res) => {
+  res.sendFile(path.join(viewsPath, 'ai.html')); // Changed from 'AI.html'
+});
+
+// Data Analytics
 router.get('/data-analytics', (req, res) => {
-    res.sendFile(path.join(viewsPath, 'data-analytics.html')); 
-}
-);
+  res.sendFile(path.join(viewsPath, 'data-analytics.html')); 
+});
 
-//data-analytics
+// Graphic Design
 router.get('/graphic-design', (req, res) => {
-    res.sendFile(path.join(viewsPath, 'graphic-design.html')); 
-}
-);//data-analytics
-router.get('/data-analytics', (req, res) => {
-    res.sendFile(path.join(viewsPath, 'data-analytics.html')); 
-}
-);
-//programming
+  res.sendFile(path.join(viewsPath, 'graphic-design.html')); 
+});
+
+// Programming
 router.get('/programming', (req, res) => {
-    res.sendFile(path.join(viewsPath, 'programming.html')); 
-}
-);
+  res.sendFile(path.join(viewsPath, 'programming.html')); 
+});
 
-//forgot-password
+// Forgot Password
 router.get('/forgot-password', (req, res) => {
-    res.sendFile(path.join(viewsPath, 'forgot-password.html')); 
-}
-);
-//terms
+  res.sendFile(path.join(viewsPath, 'forgot-password.html')); 
+});
+
+// Terms
 router.get('/terms', (req, res) => {
-    res.sendFile(path.join(viewsPath, 'terms.html'));
-}
-);
+  res.sendFile(path.join(viewsPath, 'terms.html'));
+});
 
-
-// 404 fallback
+// 404 fallback - This should come LAST
 router.get('*', (req, res) => {
   res.sendFile(path.join(viewsPath, '404.html'));
 });
