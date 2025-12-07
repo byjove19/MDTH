@@ -16,6 +16,16 @@
     <meta property="og:url" content="https://www.mdth.com">
     <meta property="og:image" content="https://www.mdth.com/images/mdth-social-share.jpg">
     
+    <!-- CSP Meta Tag -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+        font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+        img-src 'self' data: https:;
+        connect-src 'self';
+    ">
+    
     <link rel="canonical" href="https://www.mdth.com">
     <link rel="icon" href="images/MDTH LOGO.jpg" type="image/x-icon">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -75,6 +85,73 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        /* ====== MDTH BRAND ANNOUNCEMENT ====== */
+        .mdth-brand {
+            position: relative;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+
+        .mdth-brand-main {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #6C63FF 0%, #4A40E5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 3px;
+            position: relative;
+            display: inline-block;
+            line-height: 1;
+        }
+
+        .mdth-brand-main::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #6C63FF, #4A40E5);
+            border-radius: 2px;
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: underlineReveal 1s 0.5s forwards;
+        }
+
+        .mdth-tagline {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #6C63FF;
+            margin-top: 15px;
+            letter-spacing: 1.5px;
+            opacity: 0;
+            animation: fadeInUp 0.8s 0.8s forwards;
+            background: rgba(108, 99, 255, 0.1);
+            padding: 8px 20px;
+            border-radius: 25px;
+            display: inline-block;
+        }
+
+        @keyframes underlineReveal {
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* ====== IMPROVED NEWSLETTER MODAL ====== */
@@ -578,10 +655,11 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 80px 40px;
+            padding: 60px 40px;
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             position: relative;
             overflow: hidden;
+            min-height: 85vh;
         }
 
         .decorative-circle {
@@ -617,16 +695,29 @@
         .hero-content {
             flex: 1;
             max-width: 600px;
+            animation: contentReveal 1s forwards;
+        }
+
+        @keyframes contentReveal {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero-content p:first-child {
             color: #6C63FF;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
         }
 
         .hero-content h1 {
-            font-size: 48px;
+            font-size: 3.2rem;
             margin-bottom: 20px;
             line-height: 1.2;
         }
@@ -638,24 +729,27 @@
         .hero-content p:last-child {
             color: #666;
             margin-bottom: 30px;
-            font-size: 18px;
+            font-size: 1.2rem;
+            line-height: 1.7;
         }
 
         .btn-get-started {
             display: inline-block;
-            padding: 15px 30px;
-            background: #6C63FF;
+            padding: 16px 35px;
+            background: linear-gradient(135deg, #6C63FF 0%, #4A40E5 100%);
             color: white;
-            border-radius: 8px;
+            border-radius: 10px;
             font-weight: 600;
             margin-right: 20px;
             transition: all 0.3s ease;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
         }
 
         .btn-get-started:hover {
-            background: #4A40E5;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(108, 99, 255, 0.3);
         }
 
         .learn-more {
@@ -663,28 +757,31 @@
             font-weight: 600;
             display: inline-flex;
             align-items: center;
-            gap: 5px;
-            transition: gap 0.3s ease;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
         }
 
         .learn-more:hover {
-            gap: 10px;
+            gap: 12px;
+            color: #4A40E5;
         }
 
         .hero-image {
             flex: 1;
             text-align: center;
+            animation: floatUpDown 3s ease-in-out infinite;
         }
 
         .hero-image img {
             max-width: 100%;
             height: auto;
-            animation: floatUpDown 3s ease-in-out infinite;
+            max-height: 500px;
         }
 
         @keyframes floatUpDown {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-15px); }
         }
 
         /* ====== TRUSTED BY SECTION ====== */
@@ -695,7 +792,7 @@
         }
 
         .trusted-title {
-            font-size: 28px;
+            font-size: 2.2rem;
             margin-bottom: 40px;
             color: #333;
         }
@@ -703,6 +800,7 @@
         .brand-logos {
             overflow: hidden;
             position: relative;
+            padding: 20px 0;
         }
 
         .logo-track {
@@ -716,10 +814,12 @@
             width: auto;
             opacity: 0.6;
             transition: opacity 0.3s ease;
+            filter: grayscale(100%);
         }
 
         .logo-track img:hover {
             opacity: 1;
+            filter: grayscale(0%);
         }
 
         @keyframes scrollLogos {
@@ -741,10 +841,11 @@
             margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-size: 1rem;
         }
 
         .creative-solutions h2 {
-            font-size: 36px;
+            font-size: 2.8rem;
             margin-bottom: 20px;
             color: #333;
         }
@@ -753,7 +854,8 @@
             color: #666;
             max-width: 600px;
             margin: 0 auto 50px;
-            font-size: 18px;
+            font-size: 1.2rem;
+            line-height: 1.6;
         }
 
         .icon-boxes {
@@ -769,20 +871,23 @@
             max-width: 350px;
             background: white;
             padding: 40px 30px;
-            border-radius: 15px;
+            border-radius: 20px;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(108, 99, 255, 0.1);
         }
 
         .icon-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(108, 99, 255, 0.15);
+            border-color: #6C63FF;
         }
 
         .icon-box .icon {
             width: 80px;
             height: 80px;
-            background: #6C63FF;
+            background: linear-gradient(135deg, #6C63FF 0%, #4A40E5 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -790,10 +895,15 @@
             margin: 0 auto 25px;
             font-size: 30px;
             color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .icon-box:hover .icon {
+            transform: scale(1.1) rotate(5deg);
         }
 
         .icon-box h3 {
-            font-size: 22px;
+            font-size: 1.5rem;
             margin-bottom: 15px;
             color: #333;
         }
@@ -801,19 +911,20 @@
         .icon-box p {
             color: #666;
             line-height: 1.6;
+            font-size: 1rem;
         }
 
         /* ====== COURSES SLIDER ====== */
         .slider-container {
-            padding: 60px 40px;
+            padding: 80px 40px;
             background: white;
             overflow: hidden;
         }
 
         .slider-container h2 {
             text-align: center;
-            margin-bottom: 40px;
-            font-size: 36px;
+            margin-bottom: 50px;
+            font-size: 2.8rem;
             color: #333;
         }
 
@@ -834,25 +945,25 @@
         }
 
         .course-card {
-            flex: 0 0 300px;
+            flex: 0 0 320px;
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid #eee;
             text-decoration: none;
             color: inherit;
         }
 
         .course-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         .course-image {
             position: relative;
-            height: 180px;
+            height: 200px;
             overflow: hidden;
         }
 
@@ -869,55 +980,63 @@
 
         .course-duration {
             position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.7);
+            bottom: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.8);
             color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
+            padding: 6px 15px;
+            border-radius: 20px;
             font-size: 12px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            backdrop-filter: blur(5px);
         }
 
         .course-tags {
-            padding: 15px 20px 0;
+            padding: 20px 25px 0;
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
         }
 
         .tag {
-            padding: 5px 12px;
-            border-radius: 15px;
+            padding: 6px 15px;
+            border-radius: 20px;
             font-size: 12px;
             font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
-        .coding-tag { background: #e6f7ff; color: #0066cc; }
-        .design-tag { background: #f0e6ff; color: #6C63FF; }
-        .data-tag { background: #e6ffe6; color: #00cc66; }
-        .marketing-tag { background: #fff0e6; color: #ff6600; }
-        .security-tag { background: #ffe6e6; color: #cc0000; }
-        .media-tag { background: #e6f0ff; color: #0066ff; }
-        .ai-tag { background: #f0e6ff; color: #9900cc; }
-        .beginner-tag { background: #e6ffe6; color: #009900; }
-        .intermediate-tag { background: #fff0e6; color: #ff6600; }
-        .advanced-tag { background: #ffe6e6; color: #cc0000; }
+        .coding-tag { background: rgba(0, 102, 204, 0.1); color: #0066cc; border: 1px solid rgba(0, 102, 204, 0.2); }
+        .design-tag { background: rgba(108, 99, 255, 0.1); color: #6C63FF; border: 1px solid rgba(108, 99, 255, 0.2); }
+        .data-tag { background: rgba(0, 204, 102, 0.1); color: #00cc66; border: 1px solid rgba(0, 204, 102, 0.2); }
+        .marketing-tag { background: rgba(255, 102, 0, 0.1); color: #ff6600; border: 1px solid rgba(255, 102, 0, 0.2); }
+        .security-tag { background: rgba(204, 0, 0, 0.1); color: #cc0000; border: 1px solid rgba(204, 0, 0, 0.2); }
+        .media-tag { background: rgba(0, 102, 255, 0.1); color: #0066ff; border: 1px solid rgba(0, 102, 255, 0.2); }
+        .ai-tag { background: rgba(153, 0, 204, 0.1); color: #9900cc; border: 1px solid rgba(153, 0, 204, 0.2); }
+        .beginner-tag { background: rgba(0, 153, 0, 0.1); color: #009900; border: 1px solid rgba(0, 153, 0, 0.2); }
+        .intermediate-tag { background: rgba(255, 102, 0, 0.1); color: #ff6600; border: 1px solid rgba(255, 102, 0, 0.2); }
+        .advanced-tag { background: rgba(204, 0, 0, 0.1); color: #cc0000; border: 1px solid rgba(204, 0, 0, 0.2); }
 
         .course-content {
-            padding: 15px 20px;
+            padding: 20px 25px;
         }
 
         .course-title {
-            font-size: 18px;
-            margin-bottom: 10px;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
             color: #333;
+            line-height: 1.4;
         }
 
         .course-description {
             color: #666;
-            font-size: 14px;
-            margin-bottom: 15px;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
             line-height: 1.5;
+            min-height: 70px;
         }
 
         .course-rating {
@@ -925,45 +1044,50 @@
             align-items: center;
             gap: 8px;
             color: #ff9900;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             font-size: 14px;
         }
 
         .course-rating span {
-            font-weight: 600;
+            font-weight: 700;
             color: #333;
+            font-size: 1.1rem;
         }
 
         .course-rating span1 {
             color: #666;
+            font-size: 0.9rem;
         }
 
         .course-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
         }
 
         .course-price {
-            font-size: 22px;
-            font-weight: 700;
+            font-weight: 800;
+            font-size: 1.4rem;
             color: #6C63FF;
         }
 
         .join-now-btn {
-            padding: 10px 20px;
-            background: #6C63FF;
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #6C63FF 0%, #4A40E5 100%);
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-size: 0.95rem;
         }
 
         .join-now-btn:hover {
-            background: #4A40E5;
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108, 99, 255, 0.3);
         }
 
         .slider-controls {
@@ -971,24 +1095,27 @@
             justify-content: center;
             align-items: center;
             gap: 30px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
         .slider-arrow {
-            background: #6C63FF;
+            background: linear-gradient(135deg, #6C63FF 0%, #4A40E5 100%);
             color: white;
             border: none;
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
-            font-size: 20px;
+            font-size: 22px;
             cursor: pointer;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .slider-arrow:hover {
-            background: #4A40E5;
             transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(108, 99, 255, 0.3);
         }
 
         .slider-indicators {
@@ -1012,43 +1139,44 @@
 
         .explore-btn {
             display: block;
-            margin: 40px auto;
-            padding: 15px 40px;
+            margin: 50px auto;
+            padding: 16px 45px;
             background: transparent;
             border: 2px solid #6C63FF;
             color: #6C63FF;
-            border-radius: 8px;
-            font-size: 16px;
+            border-radius: 10px;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         .explore-btn:hover {
-            background: #6C63FF;
+            background: linear-gradient(135deg, #6C63FF 0%, #4A40E5 100%);
             color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(108, 99, 255, 0.3);
         }
 
         /* ====== PROJECTS SECTION ====== */
         .header {
-            padding: 60px 40px;
+            padding: 80px 40px;
             text-align: center;
             background: #f8f9fa;
         }
 
         .header h1 {
-            font-size: 36px;
+            font-size: 2.8rem;
             margin-bottom: 20px;
             color: #333;
         }
 
         .header p {
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
             color: #666;
-            font-size: 18px;
+            font-size: 1.2rem;
             line-height: 1.6;
         }
 
@@ -1056,13 +1184,15 @@
             display: flex;
             justify-content: center;
             gap: 40px;
-            padding: 40px;
+            padding: 60px 40px;
             flex-wrap: wrap;
+            background: #f8f9fa;
         }
 
         .courses .course-card {
             flex: 0 0 calc(50% - 20px);
             max-width: 500px;
+            min-width: 300px;
         }
 
         .courses .course-card img {
@@ -1072,25 +1202,25 @@
         }
 
         .course-info {
-            padding: 25px;
+            padding: 30px;
         }
 
         .course-info button {
-            margin-top: 20px;
-            padding: 12px 30px;
-            background: #6C63FF;
+            margin-top: 25px;
+            padding: 14px 35px;
+            background: linear-gradient(135deg, #6C63FF 0%, #4A40E5 100%);
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-size: 1rem;
         }
 
         .course-info button:hover {
-            background: #4A40E5;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(108, 99, 255, 0.3);
         }
 
         /* ====== ABOUT SECTION ====== */
@@ -1098,7 +1228,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 80px 40px;
+            padding: 100px 40px;
             background: white;
             gap: 60px;
         }
@@ -1112,10 +1242,11 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-size: 1rem;
         }
 
         .about h2 {
-            font-size: 36px;
+            font-size: 2.8rem;
             margin: 20px 0;
             color: #333;
         }
@@ -1123,24 +1254,24 @@
         .about p {
             color: #666;
             margin-bottom: 30px;
-            font-size: 17px;
+            font-size: 1.1rem;
             line-height: 1.7;
         }
 
         .about-btn {
             display: inline-block;
-            padding: 12px 30px;
-            background: #6C63FF;
+            padding: 14px 35px;
+            background: linear-gradient(135deg, #6C63FF 0%, #4A40E5 100%);
             color: white;
-            border-radius: 8px;
+            border-radius: 10px;
             font-weight: 600;
             transition: all 0.3s ease;
+            font-size: 1rem;
         }
 
         .about-btn:hover {
-            background: #4A40E5;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(108, 99, 255, 0.3);
         }
 
         .about-images {
@@ -1150,19 +1281,20 @@
 
         .main-image {
             width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
 
         .overlay-image {
             position: absolute;
             bottom: -30px;
             right: -30px;
-            width: 200px;
-            height: 200px;
-            border-radius: 15px;
+            width: 220px;
+            height: 220px;
+            border-radius: 20px;
             border: 5px solid white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            object-fit: cover;
         }
 
         /* ====== CTA SECTION ====== */
@@ -1170,7 +1302,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 80px 40px;
+            padding: 100px 40px;
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             gap: 60px;
         }
@@ -1181,8 +1313,8 @@
 
         .cta-image img {
             width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
 
         .cta-text {
@@ -1190,7 +1322,7 @@
         }
 
         .cta-text h2 {
-            font-size: 36px;
+            font-size: 2.8rem;
             margin-bottom: 20px;
             color: #333;
         }
@@ -1198,19 +1330,19 @@
         .cta-text p {
             color: #666;
             margin-bottom: 30px;
-            font-size: 17px;
+            font-size: 1.1rem;
             line-height: 1.7;
         }
 
         /* ====== TESTIMONIALS SECTION ====== */
         .testimonial-section {
-            padding: 80px 40px;
+            padding: 100px 40px;
             background: white;
             text-align: center;
         }
 
         .testimonial-section h2 {
-            font-size: 36px;
+            font-size: 2.8rem;
             margin-bottom: 15px;
             color: #333;
         }
@@ -1219,7 +1351,8 @@
             color: #666;
             max-width: 600px;
             margin: 0 auto 50px;
-            font-size: 18px;
+            font-size: 1.2rem;
+            line-height: 1.6;
         }
 
         .testimonial-slider {
@@ -1237,12 +1370,17 @@
         }
 
         .testimonial-card {
-            flex: 0 0 350px;
+            flex: 0 0 380px;
             background: #f8f9fa;
             padding: 40px 30px;
-            border-radius: 15px;
+            border-radius: 20px;
             text-align: center;
             position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
         }
 
         .quote-icon {
@@ -1255,116 +1393,120 @@
         }
 
         .testimonial-img {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             border: 4px solid white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         .testimonial-card p {
             color: #666;
             font-style: italic;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             line-height: 1.6;
+            font-size: 1.1rem;
         }
 
         .testimonial-card h4 {
             color: #333;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
         }
 
         .testimonial-card span {
             color: #666;
-            font-size: 14px;
+            font-size: 0.95rem;
         }
 
         /* ====== SUBSCRIPTION SECTION ====== */
         .subscription-section {
-            padding: 80px 40px;
+            padding: 100px 40px;
             background: #f8f9fa;
             text-align: center;
         }
 
         .subscription-section h2 {
-            font-size: 36px;
+            font-size: 2.8rem;
             margin-bottom: 20px;
             color: #333;
         }
 
         .subscription-form {
-            max-width: 500px;
-            margin: 40px auto 0;
+            max-width: 600px;
+            margin: 50px auto 0;
             display: flex;
             gap: 15px;
         }
 
         .subscription-form input {
             flex: 1;
-            padding: 15px 20px;
+            padding: 18px 25px;
             border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 16px;
+            border-radius: 12px;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
         }
 
         .subscription-form input:focus {
             outline: none;
             border-color: #6C63FF;
+            box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.1);
         }
 
         .subscription-form button {
-            padding: 15px 30px;
-            background: #6C63FF;
+            padding: 18px 35px;
+            background: linear-gradient(135deg, #6C63FF 0%, #4A40E5 100%);
             color: white;
             border: none;
-            border-radius: 8px;
-            font-size: 16px;
+            border-radius: 12px;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .subscription-form button:hover {
-            background: #4A40E5;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(108, 99, 255, 0.3);
         }
 
         /* ====== FOOTER ====== */
         .footer {
             background: #333;
             color: white;
-            padding: 60px 40px 30px;
+            padding: 80px 40px 30px;
         }
 
         .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 50px;
+            margin-bottom: 50px;
         }
 
         .footer-contact p {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 15px;
+            gap: 12px;
+            margin-bottom: 18px;
             color: #ccc;
+            font-size: 1rem;
         }
 
         .logo-image-footer {
-            height: 40px;
+            height: 45px;
             width: auto;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .footer-links h4 {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: white;
-            font-size: 18px;
+            font-size: 1.3rem;
         }
 
         .footer-links ul {
@@ -1372,28 +1514,32 @@
         }
 
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .footer-links a {
             color: #ccc;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            font-size: 1rem;
         }
 
         .footer-links a:hover {
-            color: white;
+            color: #6C63FF;
+            padding-left: 5px;
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 30px;
+            padding-top: 40px;
             border-top: 1px solid #444;
             color: #ccc;
+            font-size: 0.95rem;
         }
 
         .footer-bottom span {
             color: #6C63FF;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 1.1rem;
         }
 
         /* ====== DARK MODE ====== */
@@ -1469,6 +1615,18 @@
             color: #ffffff;
         }
 
+        body.dark-mode .mdth-brand-main {
+            background: linear-gradient(135deg, #6C63FF 0%, #4A40E5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        body.dark-mode .mdth-tagline {
+            background: rgba(108, 99, 255, 0.2);
+            color: #ccc;
+        }
+
         body.dark-mode .hero {
             background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
         }
@@ -1500,6 +1658,7 @@
         body.dark-mode .icon-box {
             background-color: #2d2d2d;
             color: #ffffff;
+            border-color: #3d3d3d;
         }
 
         body.dark-mode .icon-box h3 {
@@ -1639,15 +1798,44 @@
         }
 
         /* ====== RESPONSIVE DESIGN ====== */
+        @media (max-width: 1200px) {
+            .mdth-brand-main {
+                font-size: 4rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .creative-solutions h2,
+            .slider-container h2,
+            .about h2,
+            .cta-text h2,
+            .testimonial-section h2,
+            .subscription-section h2,
+            .header h1 {
+                font-size: 2.4rem;
+            }
+        }
+
         @media (max-width: 992px) {
             .hero, .about, .cta {
                 flex-direction: column;
                 text-align: center;
-                padding: 40px 20px;
+                padding: 60px 20px;
+                gap: 40px;
+            }
+
+            .mdth-brand-main {
+                font-size: 3.5rem;
+            }
+            
+            .mdth-tagline {
+                font-size: 1.2rem;
             }
 
             .hero-content h1 {
-                font-size: 36px;
+                font-size: 2.4rem;
             }
 
             .icon-boxes {
@@ -1662,6 +1850,7 @@
 
             .courses .course-card {
                 flex: 0 0 100%;
+                max-width: 400px;
             }
 
             .subscription-form {
@@ -1672,6 +1861,13 @@
                 flex-direction: column;
                 gap: 20px;
             }
+            
+            .overlay-image {
+                width: 180px;
+                height: 180px;
+                bottom: -20px;
+                right: -20px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1679,8 +1875,16 @@
                 padding: 15px 20px;
             }
 
+            .mdth-brand-main {
+                font-size: 3rem;
+            }
+            
+            .mdth-tagline {
+                font-size: 1.1rem;
+            }
+
             .hero-content h1 {
-                font-size: 28px;
+                font-size: 2rem;
             }
 
             .creative-solutions h2,
@@ -1688,8 +1892,9 @@
             .about h2,
             .cta-text h2,
             .testimonial-section h2,
-            .subscription-section h2 {
-                font-size: 28px;
+            .subscription-section h2,
+            .header h1 {
+                font-size: 2rem;
             }
 
             .course-card {
@@ -1701,15 +1906,70 @@
             }
             
             .slider-arrow {
-                width: 60px;
-                height: 60px;
-                font-size: 24px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .overlay-image {
+                width: 150px;
+                height: 150px;
+                bottom: -15px;
+                right: -15px;
             }
         }
 
         @media (max-width: 480px) {
+            .mdth-brand-main {
+                font-size: 2.5rem;
+            }
+            
+            .mdth-tagline {
+                font-size: 1rem;
+                padding: 6px 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content p:first-child {
+                font-size: 1rem;
+            }
+            
+            .hero-content p:last-child {
+                font-size: 1.1rem;
+            }
+
             .course-card {
                 flex: 0 0 260px;
+            }
+            
+            .btn-get-started,
+            .about-btn,
+            .join-now-btn {
+                padding: 12px 25px;
+                font-size: 0.95rem;
+            }
+            
+            .explore-btn {
+                padding: 14px 35px;
+                font-size: 1rem;
+            }
+            
+            .overlay-image {
+                position: relative;
+                width: 100%;
+                height: 200px;
+                bottom: 0;
+                right: 0;
+                margin-top: 20px;
+                border-radius: 15px;
             }
         }
     </style>
@@ -1817,7 +2077,13 @@
         <div class="decorative-circle circle-3"></div>
         
         <div class="hero-content">
-            <p>Get Success Together</p>
+            <!-- MDTH Brand Announcement -->
+            <div class="mdth-brand">
+                <div class="mdth-brand-main">MDTH</div>
+                <div class="mdth-tagline">Making A Difference Tech Hub</div>
+            </div>
+            
+        
             <h1>Exploring the <span>Next</span> generation of tech</h1>
             <p>Affordable, accessible and industry aligned Tech education for all, to help thrive in the digital age</p>
             <a href="/signup" class="btn-get-started">Get Started</a>

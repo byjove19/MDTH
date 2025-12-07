@@ -9,6 +9,15 @@ const UserSchema = new mongoose.Schema({
     trim: true,
     maxlength: [50, 'Name cannot be more than 50 characters']
   },
+  username: {
+    type: String,
+    required: [true, 'Please add a username'],
+    unique: true,
+    trim: true,
+    lowercase: true,
+    minlength: [3, 'Username must be at least 3 characters'],
+    maxlength: [20, 'Username cannot be more than 20 characters']
+  },
   email: {
     type: String,
     required: [true, 'Please add an email'],
@@ -69,23 +78,74 @@ const UserSchema = new mongoose.Schema({
 
 // Encrypt password using bcrypt
 UserSchema.pre('save', async function(next) {
+  // Only hash the password if it has been modified (or is new)
   if (!this.isModified('password')) {
-    next();
+    return next();
   }
-  const salt = await bcrypt.genSalt(10);
-  this.password = await bcrypt.hash(this.password, salt);
+  
+  try {
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+    next();
+  } catch (error) {
+    next(error);
+  }
 });
 
-// Sign JWT and return
+// Sign JWT and return - FIXED VERSION
 UserSchema.methods.getSignedJwtToken = function() {
-  return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRE
-  });
+  // Ensure JWT_SECRET is available
+  const jwtSecret = process.env.JWT_SECRET || 'fallback-secret-key-change-this-in-production';
+  
+  return jwt.sign(
+    { 
+      id: this._id,
+      name: this.name,
+      email: this.email,
+      role: this.role 
+    }, 
+    jwtSecret, 
+    {
+      expiresIn: process.env.JWT_EXPIRE || '30d'
+    }
+  );
 };
 
 // Match user entered password to hashed password in database
 UserSchema.methods.matchPassword = async function(enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
+
+// Get user's enrolled courses count
+UserSchema.virtual('enrolledCoursesCount').get(function() {
+  return this.enrolledCourses.length;
+});
+
+// Get user's completed courses count
+UserSchema.virtual('completedCoursesCount').get(function() {
+  return this.enrolledCourses.filter(course => course.completed).length;
+});
+
+// Set toJSON to remove password and add virtuals
+UserSchema.set('toJSON', {
+  virtuals: true,
+  transform: function(doc, ret) {
+    delete ret.password;
+    delete ret.resetPasswordToken;
+    delete ret.resetPasswordExpire;
+    return ret;
+  }
+});
+
+// Set toObject to remove password and add virtuals
+UserSchema.set('toObject', {
+  virtuals: true,
+  transform: function(doc, ret) {
+    delete ret.password;
+    delete ret.resetPasswordToken;
+    delete ret.resetPasswordExpire;
+    return ret;
+  }
+});
 
 module.exports = mongoose.model('User', UserSchema);

@@ -34,7 +34,7 @@ app.use(helmet({
       styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://cdnjs.cloudflare.com"],
       fontSrc: ["'self'", "https://fonts.gstatic.com", "https://cdnjs.cloudflare.com"],
       imgSrc: ["'self'", "data:", "https:", "http:"],
-      connectSrc: ["'self'"],
+      connectSrc: ["'self'", "http://localhost:3000", "ws://localhost:*"], // Add localhost
       frameSrc: ["'none'"],
       objectSrc: ["'none'"]
     }
