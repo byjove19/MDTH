@@ -77,7 +77,7 @@
             padding: 0 20px;
         }
 
-        /* ====== NEWSLETTER MODAL ====== */
+        /* ====== IMPROVED NEWSLETTER MODAL ====== */
         .newsletter-modal {
             display: none;
             position: fixed;
@@ -85,13 +85,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0, 0, 0, 0.7);
             z-index: 9999;
             justify-content: center;
             align-items: center;
             opacity: 0;
             transition: opacity 0.4s ease;
             padding: 20px;
+            backdrop-filter: blur(2px);
         }
 
         .newsletter-modal.active {
@@ -106,13 +107,14 @@
         }
 
         .modal-content {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            background: white;
             border-radius: 20px;
             width: 100%;
-            max-width: 900px;
+            max-width: 500px;
             display: flex;
+            flex-direction: column;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             position: relative;
             transform: translateY(30px) scale(0.95);
             transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -122,20 +124,16 @@
             transform: translateY(0) scale(1);
         }
 
-        .modal-image {
-            flex: 1;
+        .modal-header {
             background: linear-gradient(135deg, #6C63FF 0%, #4A40E5 100%);
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             color: white;
+            padding: 40px 30px;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .modal-image::before {
+        .modal-header::before {
             content: '';
             position: absolute;
             top: 0;
@@ -143,139 +141,107 @@
             right: 0;
             bottom: 0;
             background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80') center/cover;
-            opacity: 0.15;
+            opacity: 0.1;
         }
 
-        .modal-image-content {
+        .modal-header-content {
             position: relative;
             z-index: 2;
-            text-align: center;
-            max-width: 400px;
         }
 
-        .modal-image h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
+        .modal-header h2 {
+            font-size: 26px;
+            margin-bottom: 10px;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        .modal-image p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .image-stats {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            display: block;
-            font-size: 24px;
-            font-weight: 700;
-            color: #FFD166;
-        }
-
-        .stat-label {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.8;
-        }
-
-        .modal-form {
-            flex: 1;
-            padding: 50px 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        .modal-header p {
+            font-size: 14px;
+            opacity: 0.95;
+            line-height: 1.5;
         }
 
         .close-modal {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.1);
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.2);
             border: none;
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             font-size: 20px;
-            color: #666;
+            color: white;
             transition: all 0.3s ease;
             z-index: 10;
         }
 
         .close-modal:hover {
-            background: rgba(255, 255, 255, 0.2);
-            color: #333;
+            background: rgba(255, 255, 255, 0.3);
             transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 35px 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .discount-badge {
             background: linear-gradient(135deg, #FFD166 0%, #FFB347 100%);
             color: #333;
-            padding: 12px 25px;
-            border-radius: 30px;
+            padding: 12px 20px;
+            border-radius: 25px;
             font-weight: 700;
-            font-size: 18px;
+            font-size: 13px;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 25px;
+            gap: 8px;
+            margin-bottom: 20px;
             box-shadow: 0 4px 15px rgba(255, 209, 102, 0.3);
-            animation: float 3s ease-in-out infinite;
+            width: fit-content;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-
-        .modal-form h3 {
-            font-size: 28px;
+        .modal-body h3 {
+            font-size: 22px;
             color: #333;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
-        .modal-form p {
+        .modal-body > p {
             color: #666;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             line-height: 1.6;
-            font-size: 15px;
+            font-size: 14px;
         }
 
         .newsletter-form {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
+            margin-bottom: 20px;
         }
 
         .newsletter-form input {
-            padding: 16px 20px;
-            border: 2px solid #e0e0e0;
+            padding: 14px 16px;
+            border: 1.5px solid #e0e0e0;
             border-radius: 10px;
-            font-size: 15px;
+            font-size: 14px;
             transition: all 0.3s ease;
             width: 100%;
-            background: white;
+            background: #f9f9f9;
+            font-family: 'Inter', sans-serif;
         }
 
         .newsletter-form input:focus {
             outline: none;
             border-color: #6C63FF;
+            background: white;
             box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
         }
 
@@ -283,17 +249,16 @@
             background: linear-gradient(135deg, #6C63FF 0%, #4A40E5 100%);
             color: white;
             border: none;
-            padding: 18px;
+            padding: 14px;
             border-radius: 10px;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 8px;
         }
 
         .newsletter-form button:hover {
@@ -302,9 +267,9 @@
         }
 
         .privacy-note {
-            font-size: 13px;
+            font-size: 12px;
             color: #888;
-            margin-top: 20px;
+            margin-bottom: 15px;
             text-align: center;
             line-height: 1.5;
         }
@@ -318,10 +283,9 @@
         .no-thanks {
             display: block;
             text-align: center;
-            margin-top: 20px;
             color: #888;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
             transition: color 0.3s ease;
         }
 
@@ -329,28 +293,63 @@
             color: #333;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             .modal-content {
-                flex-direction: column;
-                max-width: 90%;
-                max-height: 90vh;
-                overflow-y: auto;
+                max-width: 95%;
+                border-radius: 16px;
             }
 
-            .modal-image {
+            .modal-header {
                 padding: 30px 20px;
             }
 
-            .modal-form {
-                padding: 30px 20px;
-            }
-
-            .modal-image h2 {
-                font-size: 24px;
-            }
-
-            .modal-form h3 {
+            .modal-header h2 {
                 font-size: 22px;
+                margin-bottom: 8px;
+            }
+
+            .modal-header p {
+                font-size: 13px;
+            }
+
+            .modal-body {
+                padding: 25px 20px;
+            }
+
+            .modal-body h3 {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .modal-body > p {
+                font-size: 13px;
+                margin-bottom: 20px;
+            }
+
+            .discount-badge {
+                padding: 10px 16px;
+                font-size: 12px;
+                margin-bottom: 15px;
+            }
+
+            .newsletter-form {
+                gap: 12px;
+            }
+
+            .newsletter-form input {
+                padding: 12px 14px;
+                font-size: 14px;
+            }
+
+            .newsletter-form button {
+                padding: 12px;
+                font-size: 14px;
+            }
+
+            .close-modal {
+                width: 32px;
+                height: 32px;
+                font-size: 18px;
             }
         }
 
@@ -559,19 +558,20 @@
             flex-direction: column;
             gap: 15px;
         }
-@media (max-width: 992px) {
-    .nav-links {
-        display: none;
-    }
-    
-    .auth-buttons {
-        display: none;
-    }
 
-    .hamburger {
-        display: flex;
-    }
-}
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .auth-buttons {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
 
         /* ====== HERO SECTION ====== */
         .hero {
@@ -807,6 +807,7 @@
         .slider-container {
             padding: 60px 40px;
             background: white;
+            overflow: hidden;
         }
 
         .slider-container h2 {
@@ -816,47 +817,21 @@
             color: #333;
         }
 
-     .courses-slider {
-    display: flex;
-    gap: 30px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 20px 0;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    flex-wrap: nowrap; /* Prevent wrapping */
-    -webkit-overflow-scrolling: touch; /* Better scrolling on iOS */
-}
+        .courses-slider {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 20px 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            flex-wrap: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
 
-.courses-slider::-webkit-scrollbar {
-    display: none;
-}
-
-/* Ensure course cards don't shrink */
-.course-card {
-    flex: 0 0 300px; /* Don't grow or shrink, fixed width of 300px */
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #eee;
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Responsive adjustment for smaller screens */
-@media (max-width: 768px) {
-    .course-card {
-        flex: 0 0 280px; /* Slightly smaller on mobile */
-    }
-}
-
-@media (max-width: 480px) {
-    .course-card {
-        flex: 0 0 260px; /* Even smaller on very small screens */
-    }
-}
+        .courses-slider::-webkit-scrollbar {
+            display: none;
+        }
 
         .course-card {
             flex: 0 0 300px;
@@ -1724,65 +1699,54 @@
             .testimonial-card {
                 flex: 0 0 300px;
             }
+            
+            .slider-arrow {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .course-card {
+                flex: 0 0 260px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Beautiful Newsletter Modal -->
+    <!-- Improved Newsletter Modal -->
     <div class="newsletter-modal" id="newsletterModal">
         <div class="modal-content">
-            <button class="close-modal" id="closeModal">&times;</button>
-            
-            <div class="modal-image">
-                <div class="modal-image-content">
-                    <h2>Join Our Learning Community</h2>
-                    <p>Be part of 50,000+ students who transformed their careers with MDTH. Get access to exclusive content, early course announcements, and community events.</p>
-                    
-                    <div class="image-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">50K+</span>
-                            <span class="stat-label">Students</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">94%</span>
-                            <span class="stat-label">Success Rate</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">24/7</span>
-                            <span class="stat-label">Support</span>
-                        </div>
-                    </div>
+            <div class="modal-header">
+                <button class="close-modal" id="closeModal">&times;</button>
+                <div class="modal-header-content">
+                    <h2>Join Our Community</h2>
+                    <p>Get 30% off your first course + exclusive content</p>
                 </div>
             </div>
             
-            <div class="modal-form">
+            <div class="modal-body">
                 <div class="discount-badge">
-                    <i class="fas fa-gift"></i>
-                    SPECIAL OFFER: 30% OFF FOR NEW USERS
+                    <i class="fas fa-gift"></i> SPECIAL OFFER
                 </div>
                 
-                <h3>Get Your Welcome Discount!</h3>
-                <p>Subscribe now and receive <strong>30% OFF</strong> your first course. Plus, get weekly tech tips, course updates, and exclusive content straight to your inbox.</p>
+                <h3>Unlock Your Welcome Bonus</h3>
+                <p>Subscribe now and receive 30% OFF your first course. Plus weekly tips and course updates.</p>
                 
                 <form class="newsletter-form" id="newsletterForm">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Full Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email Address" required>
-                    </div>
+                    <input type="text" placeholder="Your Full Name" required>
+                    <input type="email" placeholder="Your Email Address" required>
                     <button type="submit">
-                        <i class="fas fa-paper-plane"></i>
-                        Claim My 30% Discount
+                        <i class="fas fa-paper-plane"></i> Claim Discount
                     </button>
                 </form>
                 
                 <p class="privacy-note">
-                    By subscribing, you agree to our <a href="/privacy">Privacy Policy</a> and 
-                    to receive educational content from MDTH. You can unsubscribe anytime.
+                    We respect your privacy. <a href="/privacy">Privacy Policy</a>
                 </p>
                 
-                <a href="#" class="no-thanks" id="noThanks">No thanks, I'll pass for now</a>
+                <a href="#" class="no-thanks" id="noThanks">Not interested right now</a>
             </div>
         </div>
     </div>
@@ -1804,7 +1768,6 @@
         </ul>
         
         <div class="auth-buttons">
-            <!-- Dark Mode Toggle for Desktop -->
             <button id="desktopThemeToggle" class="theme-toggle">
                 <i class="fas fa-moon"></i>
             </button>
@@ -1812,7 +1775,6 @@
             <a href="/login" class="btn btn-login">Login</a>
         </div>
         
-        <!-- Hamburger Icon -->
         <div class="hamburger" id="hamburgerBtn">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -1820,7 +1782,7 @@
         </div>
     </nav>
 
-    <!-- Side Menu (hidden by default) -->
+    <!-- Side Menu -->
     <div class="side-menu" id="sideMenu">
         <div class="side-menu-header">
             <img src="images/MDTH_LOGO-removebg-preview.png" alt="Logo" class="side-menu-logo">
@@ -1850,7 +1812,6 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <!-- Decorative Circles -->
         <div class="decorative-circle circle-1"></div>
         <div class="decorative-circle circle-2"></div>
         <div class="decorative-circle circle-3"></div>
@@ -1891,7 +1852,6 @@
             <p1>Why Choose Us</p1>
             <h2>Creative and Unique Solutions</h2>
             <p>We adhere to the highest standards of quality in all our products and services. From design and development to manufacturing.</p>
-            <!-- Icon Boxes -->
             <div class="icon-boxes">
                 <div class="icon-box">
                     <div class="icon">
@@ -1922,7 +1882,6 @@
     <div class="slider-container">
         <h2>Featured Courses</h2>
         <div class="courses-slider" id="coursesSlider">
-            <!-- Programming -->
             <a href="/programming" class="course-card">
                 <div class="course-image">
                     <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=500&q=60" alt="Programming">
@@ -1943,7 +1902,6 @@
                 </div>
             </a>
 
-            <!-- UX/UI Design -->
             <a href="/ui-ux" class="course-card">
                 <div class="course-image">
                     <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=500&q=60" alt="UX/UI Design">
@@ -1964,7 +1922,6 @@
                 </div>
             </a>
 
-            <!-- Data Analytics -->
             <a href="/data-analytics" class="course-card">
                 <div class="course-image">
                     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=60" alt="Data Analytics">
@@ -1985,7 +1942,6 @@
                 </div>
             </a>
 
-            <!-- Digital Marketing -->
             <a href="/digital-marketing" class="course-card">
                 <div class="course-image">
                     <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?auto=format&fit=crop&w=500&q=60" alt="Digital Marketing">
@@ -2006,7 +1962,6 @@
                 </div>
             </a>
 
-            <!-- Cybersecurity -->
             <a href="/cybersecurity" class="course-card">
                 <div class="course-image">
                     <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=500&q=60" alt="Cybersecurity">
@@ -2027,7 +1982,6 @@
                 </div>
             </a>
 
-            <!-- Graphic Design -->
             <a href="/graphic-design" class="course-card">
                 <div class="course-image">
                     <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=500&q=60" alt="Graphic Design">
@@ -2048,7 +2002,6 @@
                 </div>
             </a>
 
-            <!-- Video Editing -->
             <a href="/video-editing" class="course-card">
                 <div class="course-image">
                     <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=500&q=60" alt="Video Editing">
@@ -2069,7 +2022,6 @@
                 </div>
             </a>
 
-            <!-- Artificial Intelligence -->
             <a href="/artificial-intelligence" class="course-card">
                 <div class="course-image">
                     <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=500&q=60" alt="Artificial Intelligence">
@@ -2091,7 +2043,6 @@
             </a>
         </div>
 
-        <!-- Slider Controls -->
         <div class="slider-controls">
             <button class="slider-arrow prev-arrow" id="prevBtn">&larr;</button>
             <div class="slider-indicators" id="indicators"></div>
@@ -2099,7 +2050,6 @@
         </div>
     </div>
 
-    <!-- Explore All Programs Button -->
     <div style="text-align: center; margin: 40px 0;">
         <button class="explore-btn">Explore All Programs</button>
     </div>
@@ -2108,10 +2058,7 @@
     <header class="header">
         <div class="header-content">
             <h1>MDTH Design project</h1>
-            <p>
-                The MDTH design project showcases the innovative and creative work produced by our
-                design students highlighting their growth and mastery of various design principles.
-            </p>
+            <p>The MDTH design project showcases the innovative and creative work produced by our design students highlighting their growth and mastery of various design principles.</p>
         </div>
     </header>
 
@@ -2119,28 +2066,18 @@
         <div class="course-card">
             <img src="images/course image 1.jpg" alt="Advanced JavaScript">
             <div class="course-info">
-                <span class="tag design-tag">
-                    <i class="fas fa-th-large"></i> Design
-                </span> 
+                <span class="tag design-tag"><i class="fas fa-th-large"></i> Design</span> 
                 <h3>Advanced JavaScript</h3>
-                <p>
-                    Take your JavaScript skills to the next level. Explore advanced concepts like closures,
-                    prototypes, asynchronous programming and ES6 features. Build complex applications with confidence.
-                </p>
+                <p>Take your JavaScript skills to the next level. Explore advanced concepts like closures, prototypes, asynchronous programming and ES6 features. Build complex applications with confidence.</p>
                 <button>View Project</button>
             </div>
         </div>
         <div class="course-card">
             <img src="images/course image 2.jpg" alt="UI/UX Design">
             <div class="course-info">
-                <span class="tag design-tag">
-                    <i class="fas fa-th-large"></i> Design
-                </span> 
+                <span class="tag design-tag"><i class="fas fa-th-large"></i> Design</span> 
                 <h3>UI/UX Design</h3>
-                <p>
-                    Master the principles of user interface and experience design. Learn to create intuitive,
-                    accessible, and visually appealing digital products that users love.
-                </p>
+                <p>Master the principles of user interface and experience design. Learn to create intuitive, accessible, and visually appealing digital products that users love.</p>
                 <button>View Project</button>
             </div>
         </div>
@@ -2151,11 +2088,7 @@
         <div class="about-text">
             <p class="learn-about"><span>Learn about us</span></p>
             <h2>About Making A Difference Tech Hub</h2>
-            <p>
-                Making a difference tech hub is on a mission to empower individuals from all backgrounds with the tech skills and
-                knowledge they need to thrive in today's rapidly evolving digital world. We believe that everyone, regardless
-                of their circumstances, should have access to affordable and high quality education 🌐🚀
-            </p>
+            <p>Making a difference tech hub is on a mission to empower individuals from all backgrounds with the tech skills and knowledge they need to thrive in today's rapidly evolving digital world. We believe that everyone, regardless of their circumstances, should have access to affordable and high quality education 🌐🚀</p>
             <a href="#" class="about-btn">Learn More</a>
         </div>
         <div class="about-images">
@@ -2186,9 +2119,7 @@
         <div class="testimonial-slider">
             <div class="testimonial-card">
                 <i class="fa-solid fa-quote-left quote-icon"></i>
-                <img src="https://images.pexels.com/photos/30506727/pexels-photo-30506727.jpeg" 
-                     alt="Nigerian man in suit standing outdoors, professional portrait" 
-                     class="testimonial-img">
+                <img src="https://images.pexels.com/photos/30506727/pexels-photo-30506727.jpeg" alt="Nigerian man in suit" class="testimonial-img">
                 <p>MDTH is a great success partner. The team is incredibly helpful, providing the best project management services.</p>
                 <h4>Adebayo Adekunle</h4>
                 <span>CEO, Adekunle Enterprises</span>
@@ -2196,9 +2127,7 @@
 
             <div class="testimonial-card">
                 <i class="fa-solid fa-quote-left quote-icon"></i>
-                <img src="https://images.pexels.com/photos/30653971/pexels-photo-30653971.jpeg" 
-                     alt="Elegant Nigerian woman, professional portrait" 
-                     class="testimonial-img">
+                <img src="https://images.pexels.com/photos/30653971/pexels-photo-30653971.jpeg" alt="Nigerian woman" class="testimonial-img">
                 <p>MDTH has the most skilled professionals who make the project seamless and successful.</p>
                 <h4>Chioma Okafor</h4>
                 <span>Founder, Creative Vision</span>
@@ -2206,9 +2135,7 @@
 
             <div class="testimonial-card">
                 <i class="fa-solid fa-quote-left quote-icon"></i>
-                <img src="https://images.pexels.com/photos/31359447/pexels-photo-31359447.jpeg" 
-                     alt="Stylish Nigerian man in thoughtful pose" 
-                     class="testimonial-img">
+                <img src="https://images.pexels.com/photos/31359447/pexels-photo-31359447.jpeg" alt="Nigerian man" class="testimonial-img">
                 <p>The professionalism and skill of MDTH's team made our project a success. Highly recommend!</p>
                 <h4>Tunde Ogunleye</h4>
                 <span>Manager, Peak Solutions</span>
@@ -2216,9 +2143,7 @@
 
             <div class="testimonial-card">
                 <i class="fa-solid fa-quote-left quote-icon"></i>
-                <img src="https://images.pexels.com/photos/31468532/pexels-photo-31468532.jpeg" 
-                     alt="Young Nigerian man in suit standing outdoors" 
-                     class="testimonial-img">
+                <img src="https://images.pexels.com/photos/31468532/pexels-photo-31468532.jpeg" alt="Young Nigerian man" class="testimonial-img">
                 <p>The team at MDTH went above and beyond to meet our goals. The results were outstanding!</p>
                 <h4>Aisha Bello</h4>
                 <span>Director, Bello Consulting</span>
@@ -2284,44 +2209,30 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Newsletter Modal Functionality
             const newsletterModal = document.getElementById('newsletterModal');
             const closeModalBtn = document.getElementById('closeModal');
             const noThanksBtn = document.getElementById('noThanks');
             const newsletterForm = document.getElementById('newsletterForm');
             
-            // Check if modal was shown in the last 24 hours
+            const MODAL_KEY = 'mdth_modal_shown';
+            const NO_THANKS_KEY = 'mdth_no_thanks';
+            const SUBSCRIBED_KEY = 'mdth_subscribed';
+            
             function shouldShowModal() {
-                const lastShown = localStorage.getItem('newsletterLastShown');
-                const hasSubscribed = localStorage.getItem('mdthSubscribed');
+                const subscribed = localStorage.getItem(SUBSCRIBED_KEY);
+                if (subscribed === 'true') return false;
                 
-                // Don't show if user has subscribed
-                if (hasSubscribed === 'true') return false;
-                
-                // Don't show if user clicked "No thanks" in the last 7 days
-                const noThanksTime = localStorage.getItem('mdthNoThanks');
-                if (noThanksTime) {
-                    const now = new Date().getTime();
-                    const daysSinceNoThanks = (now - parseInt(noThanksTime)) / (1000 * 60 * 60 * 24);
-                    if (daysSinceNoThanks < 7) return false;
+                const noThanks = localStorage.getItem(NO_THANKS_KEY);
+                if (noThanks) {
+                    const daysSince = (Date.now() - parseInt(noThanks)) / (1000 * 60 * 60 * 24);
+                    if (daysSince < 7) return false;
                 }
                 
+                const lastShown = localStorage.getItem(MODAL_KEY);
                 if (!lastShown) return true;
                 
-                const now = new Date().getTime();
-                const hoursSinceLastShow = (now - parseInt(lastShown)) / (1000 * 60 * 60);
-                
-                // Show modal only if it hasn't been shown in the last 24 hours
-                return hoursSinceLastShow >= 24;
-            }
-            
-            // Show modal after 2 seconds if conditions are met
-            if (shouldShowModal()) {
-                setTimeout(() => {
-                    newsletterModal.classList.add('active');
-                    localStorage.setItem('newsletterLastShown', new Date().getTime().toString());
-                    document.body.style.overflow = 'hidden';
-                }, 2000);
+                const hoursSince = (Date.now() - parseInt(lastShown)) / (1000 * 60 * 60);
+                return hoursSince >= 24;
             }
             
             function closeModal() {
@@ -2329,12 +2240,24 @@
                 document.body.style.overflow = 'auto';
             }
             
+            function showModal() {
+                newsletterModal.classList.add('active');
+                localStorage.setItem(MODAL_KEY, Date.now().toString());
+                document.body.style.overflow = 'hidden';
+            }
+            
+            if (shouldShowModal()) {
+                setTimeout(() => {
+                    showModal();
+                }, 2000);
+            }
+            
             closeModalBtn.addEventListener('click', closeModal);
             
             noThanksBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 closeModal();
-                localStorage.setItem('mdthNoThanks', new Date().getTime().toString());
+                localStorage.setItem(NO_THANKS_KEY, Date.now().toString());
             });
             
             newsletterModal.addEventListener('click', function(e) {
@@ -2347,226 +2270,148 @@
                 e.preventDefault();
                 const name = this.querySelector('input[type="text"]').value;
                 const email = this.querySelector('input[type="email"]').value;
-                
                 const submitBtn = this.querySelector('button');
                 const originalText = submitBtn.innerHTML;
+                
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
                 submitBtn.disabled = true;
                 
                 setTimeout(() => {
-                    const modalForm = document.querySelector('.modal-form');
-                    modalForm.innerHTML = `
-                        <div style="text-align: center; padding: 20px;">
-                            <div style="font-size: 60px; color: #6C63FF; margin-bottom: 20px;">
+                    const modalBody = document.querySelector('.modal-body');
+                    modalBody.innerHTML = `
+                        <div style="text-align: center; padding: 20px 0;">
+                            <div style="font-size: 50px; color: #6C63FF; margin-bottom: 20px;">
                                 <i class="fas fa-check-circle"></i>
                             </div>
                             <h3 style="color: #333; margin-bottom: 15px;">Thank You, ${name}!</h3>
-                            <p style="color: #666; margin-bottom: 25px;">
+                            <p style="color: #666; margin-bottom: 25px; font-size: 14px;">
                                 Your 30% discount code has been sent to:<br>
                                 <strong>${email}</strong>
                             </p>
-                            <p style="color: #888; font-size: 14px;">
-                                Check your inbox for your welcome email with the discount code.
+                            <p style="color: #888; font-size: 13px;">
+                                Check your inbox for your welcome email.
                             </p>
-                            <button onclick="closeModal()" style="
+                            <button onclick="document.getElementById('closeModal').click()" style="
                                 background: #6C63FF;
                                 color: white;
                                 border: none;
-                                padding: 12px 30px;
+                                padding: 10px 25px;
                                 border-radius: 8px;
                                 cursor: pointer;
                                 margin-top: 20px;
+                                font-weight: 600;
                             ">
                                 Continue to MDTH
                             </button>
                         </div>
                     `;
                     
-                    localStorage.setItem('mdthSubscribed', 'true');
+                    localStorage.setItem(SUBSCRIBED_KEY, 'true');
                 }, 1500);
             });
             
-            window.closeModal = closeModal;
-            
-            // Dark Mode Toggle Functionality
+            // Dark Mode Toggle
             const desktopThemeToggle = document.getElementById('desktopThemeToggle');
             const mobileThemeToggle = document.getElementById('themeToggle');
             
             function toggleDarkMode() {
                 document.body.classList.toggle('dark-mode');
-                const isDarkMode = document.body.classList.contains('dark-mode');
-                localStorage.setItem('darkMode', isDarkMode);
-                
-                const icons = document.querySelectorAll('.theme-toggle, .theme-icon');
-                icons.forEach(icon => {
-                    const iconElement = icon.querySelector('i');
-                    if (isDarkMode) {
-                        iconElement.classList.remove('fa-moon');
-                        iconElement.classList.add('fa-sun');
-                    } else {
-                        iconElement.classList.remove('fa-sun');
-                        iconElement.classList.add('fa-moon');
-                    }
+                const isDark = document.body.classList.contains('dark-mode');
+                localStorage.setItem('darkMode', isDark);
+                updateThemeIcons();
+            }
+            
+            function updateThemeIcons() {
+                const isDark = document.body.classList.contains('dark-mode');
+                document.querySelectorAll('.theme-toggle, .theme-icon').forEach(btn => {
+                    const icon = btn.querySelector('i');
+                    icon.classList.toggle('fa-moon', !isDark);
+                    icon.classList.toggle('fa-sun', isDark);
                 });
             }
             
             if (localStorage.getItem('darkMode') === 'true') {
                 document.body.classList.add('dark-mode');
-                const icons = document.querySelectorAll('.theme-toggle, .theme-icon');
-                icons.forEach(icon => {
-                    const iconElement = icon.querySelector('i');
-                    iconElement.classList.remove('fa-moon');
-                    iconElement.classList.add('fa-sun');
-                });
+                updateThemeIcons();
             }
             
-            if (desktopThemeToggle) {
-                desktopThemeToggle.addEventListener('click', toggleDarkMode);
-            }
+            desktopThemeToggle.addEventListener('click', toggleDarkMode);
+            mobileThemeToggle.addEventListener('click', toggleDarkMode);
             
-            if (mobileThemeToggle) {
-                mobileThemeToggle.addEventListener('click', toggleDarkMode);
-            }
-            
-            // Mobile Menu Toggle
+            // Mobile Menu
             const hamburgerBtn = document.getElementById('hamburgerBtn');
             const closeMenuBtn = document.getElementById('closeMenuBtn');
             const sideMenu = document.getElementById('sideMenu');
             
-            if (hamburgerBtn && sideMenu) {
-                hamburgerBtn.addEventListener('click', function() {
-                    sideMenu.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                });
-                
-                closeMenuBtn.addEventListener('click', function() {
+            hamburgerBtn.addEventListener('click', () => {
+                sideMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            closeMenuBtn.addEventListener('click', () => {
+                sideMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
                     sideMenu.classList.remove('active');
                     document.body.style.overflow = 'auto';
                 });
-                
-                const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
-                mobileLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        sideMenu.classList.remove('active');
-                        document.body.style.overflow = 'auto';
-                    });
-                });
-            }
+            });
             
-            // Enhanced Course Slider
+            // Course Slider
             const slider = document.getElementById('coursesSlider');
             const prevBtn = document.getElementById('prevBtn');
             const nextBtn = document.getElementById('nextBtn');
             const indicators = document.getElementById('indicators');
             
-            if (slider && prevBtn && nextBtn && indicators) {
-                const courseCards = document.querySelectorAll('.course-card');
-                const cardWidth = 330;
-                const visibleCards = Math.floor(slider.offsetWidth / cardWidth);
-                const totalSlides = Math.ceil(courseCards.length / visibleCards);
-                
-                let currentSlide = 0;
-                let autoSlideInterval;
-                
-                // Create indicators
-                for (let i = 0; i < totalSlides; i++) {
-                    const indicator = document.createElement('span');
-                    indicator.classList.add('indicator');
-                    if (i === 0) indicator.classList.add('active');
-                    indicator.addEventListener('click', () => goToSlide(i));
-                    indicators.appendChild(indicator);
-                }
-                
-                function updateSlider() {
-                    slider.scrollTo({
-                        left: currentSlide * slider.offsetWidth,
-                        behavior: 'smooth'
-                    });
-                    
-                    document.querySelectorAll('.indicator').forEach((ind, index) => {
-                        ind.classList.toggle('active', index === currentSlide);
-                    });
-                }
-                
-                function goToSlide(slideIndex) {
-                    currentSlide = slideIndex;
-                    updateSlider();
-                    resetAutoSlide();
-                }
-                
-                function nextSlide() {
-                    currentSlide = (currentSlide + 1) % totalSlides;
-                    updateSlider();
-                }
-                
-                function prevSlide() {
-                    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                    updateSlider();
-                }
-                
-                function startAutoSlide() {
-                    autoSlideInterval = setInterval(() => {
-                        nextSlide();
-                    }, 5000);
-                }
-                
-                function resetAutoSlide() {
-                    clearInterval(autoSlideInterval);
-                    startAutoSlide();
-                }
-                
-                prevBtn.addEventListener('click', () => {
-                    prevSlide();
-                    resetAutoSlide();
-                });
-                
-                nextBtn.addEventListener('click', () => {
-                    nextSlide();
-                    resetAutoSlide();
-                });
-                
-                startAutoSlide();
-                
-                slider.addEventListener('mouseenter', () => {
-                    clearInterval(autoSlideInterval);
-                });
-                
-                slider.addEventListener('mouseleave', () => {
-                    resetAutoSlide();
+            const cards = document.querySelectorAll('.course-card');
+            let currentSlide = 0;
+            
+            const totalSlides = Math.ceil(cards.length / 1);
+            for (let i = 0; i < totalSlides; i++) {
+                const indicator = document.createElement('span');
+                indicator.classList.add('indicator');
+                if (i === 0) indicator.classList.add('active');
+                indicator.addEventListener('click', () => goToSlide(i));
+                indicators.appendChild(indicator);
+            }
+            
+            function updateSlider() {
+                slider.scrollTo({ left: currentSlide * slider.offsetWidth, behavior: 'smooth' });
+                document.querySelectorAll('.indicator').forEach((ind, idx) => {
+                    ind.classList.toggle('active', idx === currentSlide);
                 });
             }
             
-            // Testimonial slider functionality
-            const testimonialPrevBtn = document.getElementById('prev-btn');
-            const testimonialNextBtn = document.getElementById('next-btn');
+            function goToSlide(idx) {
+                currentSlide = idx;
+                updateSlider();
+            }
+            
+            prevBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateSlider();
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlider();
+            });
+            
+            // Testimonial Slider
             const testimonialSlider = document.querySelector('.testimonial-slider');
+            const prevTestimonialBtn = document.getElementById('prev-btn');
+            const nextTestimonialBtn = document.getElementById('next-btn');
             
-            if (testimonialSlider && testimonialPrevBtn && testimonialNextBtn) {
-                const testimonialCards = document.querySelectorAll('.testimonial-card');
-                let currentTestimonial = 0;
-                
-                function updateTestimonialSlider() {
-                    testimonialSlider.scrollTo({
-                        left: currentTestimonial * 380,
-                        behavior: 'smooth'
-                    });
-                }
-                
-                testimonialNextBtn.addEventListener('click', () => {
-                    currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
-                    updateTestimonialSlider();
-                });
-                
-                testimonialPrevBtn.addEventListener('click', () => {
-                    currentTestimonial = (currentTestimonial - 1 + testimonialCards.length) % testimonialCards.length;
-                    updateTestimonialSlider();
-                });
-                
-                setInterval(() => {
-                    currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
-                    updateTestimonialSlider();
-                }, 8000);
-            }
+            prevTestimonialBtn.addEventListener('click', () => {
+                testimonialSlider.scrollBy({ left: -380, behavior: 'smooth' });
+            });
+            
+            nextTestimonialBtn.addEventListener('click', () => {
+                testimonialSlider.scrollBy({ left: 380, behavior: 'smooth' });
+            });
         });
     </script>
 </body>
